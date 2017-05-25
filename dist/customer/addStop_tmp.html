@@ -1,0 +1,95 @@
+<div ng-controller="addStopController" class='utp-add-stop' ng-init='controllerObj(info)'>
+
+	<div class="form-container">
+
+		<div class='input-container delete-stop'>
+			<span ng-click='info.deleteStop(number)'>&#9747</span>
+		</div>
+
+		<div class="input-container whs-number">
+			<label>Whs. Number</label>
+			<input type='text' ng-model='info.whsNumber' ng-keydown="clearWhs(info)" ng-keyup="offerMatches(info, true)">
+		</div>
+
+		<div class="input-container whs-name">
+			<label>Whs. Name</label>
+			<input type='text' ng-model='info.whsName' ng-change="offerMatches(info)">
+		</div>
+
+		<div class='input-container whs-address'>
+			<label>Address</label>
+			<input type='text' ng-model="info.address" ng-change="offerMatches(info)">
+		</div>
+
+		<div class='input-container whs-address2'>
+			<label>Address 2</label>
+			<input type='text' ng-model="info.address2" ng-change="offerMatches(info)">
+		</div>
+
+		<div class="input-container whs-city">
+			<label>City</label>
+			<input type='text' ng-model='info.city' ng-change="offerMatches(info)">
+		</div>
+
+		<div class="input-container whs-state">
+			<label>State</label>
+			<input type='text' ng-model='info.state' ng-change="offerMatches(info)">
+		</div>
+
+		<div class="input-container whs-zip">
+			<label>ZIP Code</label>
+			<input type='text' ng-model='info.zip' ng-change="offerMatches(info)">
+		</div>
+
+	</div>
+
+	<div class='search-results-container'>
+		<ul ng-if="showResultsMenu" class='search-results' ng-mouseleave='hideSearch()'>
+			<div class='list-body-container'>
+				<li ng-repeat='result in searchResults' ng-click='searchSelect(result)'>
+					<span class='result-name'><b>{{ result.whsName }}</b></span>
+					<span class='result-address'>{{ result.address1 }}</span>
+					<span class='result-geo'>{{ result.city + ', ' + result.state + ' ' + result.zip }}</span>
+				</li>
+			</div>
+			<li ng-click="info.openModal(number)" class='create-whs-prompt'>
+				<a>Create Warehouse</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="form-container">
+
+		<div class='input-container pick-or-del'>
+			<label style="opacity: 0">Stop</label>
+			<select ng-model='info.action'>
+				<option value='0'>Pick</option>
+				<option value='1'>Deliver</option>
+				<option value='2'>Paperwork</option>
+				<option value='3'>Exchange</option>
+			</select>
+		</div>
+
+		<div class='input-container load-ready-date'>
+			<label>Ready Date</label>
+			<input type='date' ng-model='info.readyDate'>
+		</div>
+
+		<div class='input-container load-ready-time'>
+			<label>Ready Time</label>
+			<input type='time' ng-model='info.readyTime'>
+		</div>
+
+		<div class='input-container load-deadline-date'>
+			<label>Deadline Date</label>
+			<input type='date' ng-model='info.deadlineDate'>
+		</div>
+
+		<div class='input-container load-deadline-time'>
+			<label>Deadline Time</label>
+			<input type='time' ng-model='info.deadlineTime'>
+		</div>
+
+	</div>
+
+</div>

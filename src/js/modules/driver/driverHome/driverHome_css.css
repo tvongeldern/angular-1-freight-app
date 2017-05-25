@@ -1,0 +1,61 @@
+utp-driver-home div.driver-home-container {
+    width: 100%;
+    max-width: 504px;
+    margin: 0 auto 0 auto;
+}
+
+utp-driver-home div.driver-home-container h2 {
+    width: 100%;
+    text-align: center;
+}
+
+utp-driver-home div.driver-home-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+utp-driver-home div.driver-home-container h4.no-loads-enjoy {
+    width: 80%;
+    margin: 24px auto 24px auto;
+    text-align: center;
+    color: $black;
+}
+
+utp-driver-home div.driver-home-container .location-update-button {
+    display: block;
+    width: 75%;
+    height: 40px;
+    min-width: 294px;
+    font-size: 1.1em;
+    margin: 48px auto 48px auto;
+    outline: none;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    background-color: $blue;
+    color: $white;
+    cursor: pointer;
+}
+
+utp-driver-home div.driver-home-container .button-loading:after {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+    animation: ellipsis steps(4,end) 900ms infinite;
+    content: "\2026";
+    width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}

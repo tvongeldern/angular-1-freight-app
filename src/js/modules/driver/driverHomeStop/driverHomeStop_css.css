@@ -1,0 +1,61 @@
+utp-driver-home-stop div.driver-home-stop-container {
+    display: block;
+    width: 100%;
+}
+
+utp-driver-home-stop div.driver-home-stop-container b.collapse-expand-button {
+    outline: 2px solid $red;
+    color: $red;
+    outline-offset: -2px;
+    padding: 0 5px 0 5px;
+    float: right;
+    cursor: pointer;
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.collapsed-stop {
+    width: 75%;
+    min-width: 294px;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    margin: 4px auto 4px auto;
+    padding: 6px 6px 6px 12px;
+    background-color: $blue;
+    color: $white;
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.open-stop {
+    width: 75%;
+    min-width: 294px;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    margin: 4px auto 4px auto;
+    padding: 6px 6px 6px 12px
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.open-stop h4 {
+    margin: 8px 0 8px 0;
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.open-stop p {
+    font-size: .9em;
+    margin: 4px 0 4px 0;
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.open-stop p.phone-line {
+    margin: 8px 0 8px 0;
+    color: $blue;
+    font-weight: bold;
+}
+
+utp-driver-home-stop div.driver-home-stop-container div.open-stop button {
+    width: 100%;
+    margin: 4px 0 0 -2px;
+    color: $white;
+    background-color: $blue;
+    border: 2px solid $blue;
+    border-radius: .15em;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 0 6px;
+    font-size: 1em;
+}

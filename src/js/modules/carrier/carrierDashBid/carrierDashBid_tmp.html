@@ -1,0 +1,60 @@
+<div class='carrier-dash-bid' ng-init='cdbCtrl.parseInfo()'>
+
+    <div class='left-container'>
+        <h3>{{ "Bid # " + info.bidNumber + " - " + cdbCtrl.bidder(info).desc + " : $" + info.amount }}</h3>
+        <p>{{ cdbCtrl.route }}</p>
+        <p><b>{{ cdbCtrl.changes }}</b></p>
+    </div>
+
+    <div class='right-container'>
+        <select ng-if="!info.driver && (cdbCtrl.bidder(info).code == 3)" ng-model='info.driver'>
+            <option value="">Driver</option>
+            <option ng-repeat="driver in drivers" ng-if="cdbCtrl.driverCanGet(driver)" value="{{ driver.driverID }}">{{ driver.firstName + " " + driver.lastName }}</option>
+        </select>
+        <p ng-if='cdbCtrl.bidder(info).code == 2 || cdbCtrl.bidder(info).code == 1' class='menu-text bid-remove' ng-click="cdbCtrl.removeBid()">Remove</p>
+        <p ng-if='(cdbCtrl.bidder(info).code == 3) && info.driver' class='menu-text bid-approve' ng-click="cdbCtrl.approveBid()">Approve</p>
+        <p ng-if='cdbCtrl.bidder(info).code == 3' class='menu-text bid-remove' ng-click="cdbCtrl.openCounterMenu()">Counter</p>
+        <p class='menu-text bid-details' ng-click="cdbCtrl.showDetails($event)">Details</p>
+
+        <div ng-if="popup.show" class="bid-details-popup" ng-style="{'margin': (popup.vertical +'px 0 0 -240px')}" ng-mouseleave="cdbCtrl.hideDetails()">
+            <h4>{{ "Load # " + info.loadNumber + " / Bid # " + info.bidNumber }}</h4>
+            <ul>
+                <li ng-repeat="stop in info.locations">
+                    <h5 ng-class="{ 'altered' : (info.adjustments[stop.stopID].newTime || info.adjustments[stop.stopID].newDate) }">{{ filters.stopHeader(stop.action) }}</h5>
+                    <p class='popup-stop'>{{ filters.location(stop) }}</p>
+
+                    <b ng-if="(!info.adjustments[stop.stopID].newTime || !info.adjustments[stop.stopID].newDate)"><u>From</u> : </b>
+                    <p ng-if="!info.adjustments[stop.stopID].newTime && !info.adjustments[stop.stopID].newTime" class='popup-stop'>{{ stop.earlyTime.slice(0,-3) }}</p>
+                    <p ng-if="!info.adjustments[stop.stopID].newDate && !info.adjustments[stop.stopID].newDate" class='popup-stop'>{{ stop.earlyDate | date : 'MM-dd-yyyy' }}</p>
+
+                    <b ng-if="!info.adjustments[stop.stopID].newTime || !info.adjustments[stop.stopID].newDate"><u>Until</u> : </b>
+                    <p ng-if="!info.adjustments[stop.stopID].newTime && !info.adjustments[stop.stopID].newTime" class='popup-stop'>{{ stop.lateTime.slice(0,-3) }}</p>
+                    <p ng-if="!info.adjustments[stop.stopID].newDate && !info.adjustments[stop.stopID].newDate" class='popup-stop'>{{ stop.lateDate | date : 'MM-dd-yyyy' }}</p>
+
+                    <p ng-if="info.adjustments[stop.stopID].newTime" class='popup-stop altered'>@{{ info.adjustments[stop.stopID].newTime.slice(0,-3) }}</p>
+                    <p ng-if="info.adjustments[stop.stopID].newDate" class='popup-stop altered'>@{{ info.adjustments[stop.stopID].newDate | date : 'MM-dd-yyyy' }}</p>
+
+                    <input ng-if="popup.counter && (info.stopsAsIs != 1)" type='date' ng-model="popup.data[stop.stopID].date">
+                    <input ng-if="popup.counter && (info.stopsAsIs != 1)" type='time' ng-model="popup.data[stop.stopID].time">
+
+                </li>
+                <li>
+                    <h5>Freight</h5>
+                    <p class='popup-stop'><b>Weight : </b>{{ info.weight || info.original.weight }}</p>
+                    <input ng-if='popup.counter' type='text' ng-model='popup.data.weight'>
+                    <p class='popup-stop'><b>Handling : </b>{{ filters.handling(info.handling || info.original.handling) }}</p>
+                    <p class='popup-stop'><b>Commodity : </b>{{ info.commodity }}</p>
+                    <p ng-if="info.unNumber" class='popup-stop'><b>HAZMAT </b>{{ 'UN # ' + info.unNumber }}</p>
+                    <br>
+                </li>
+                <li ng-if="popup.counter" class='submit-container'>
+                    <b>Rate : </b>
+                    <input type='text' ng-model='popup.data.amount'>
+                    <button ng-click="popup.submitCounter()">Submit Counter</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

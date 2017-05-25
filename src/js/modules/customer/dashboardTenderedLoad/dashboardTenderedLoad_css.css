@@ -1,0 +1,71 @@
+utp-dashboard-tendered-load div.dashboard-tendered-load-container {
+    display: inline-block;
+    width: 99%;
+    height: 60px;
+    text-overflow: ellipsis;
+    border: 1px solid $blue;
+    margin: 2px;
+    cursor: default;
+    background-color: $white;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container {
+    width: 80%;
+    float: left;
+    display: table-cell;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container h5 {
+    margin: 4px 8px 4px 8px;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container p {
+    margin: 0 8px 2px 8px;
+    font-size: .8em;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon {
+    text-align: center;
+    height: 100%;
+    width: 19.5%;
+    float: left;
+    display: table-cell;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon div {
+    height: 24px;
+    width: 24px;
+    margin: 6px auto 6px auto;
+    border-radius: 100%;
+    border: 3px outset black;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon h5 {
+    margin: 0;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .on-time {
+    background-color: #40ff00;
+    border-color: green;
+    box-shadow: 0px 0px 14px 2px $green;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .cutting-close {
+    background-color: #ffff00;
+    border-color: #ff9900;
+    box-shadow: 0px 0px 14px 2px #ffff00;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .running-late {
+    background-color: #cc0000;
+    border-color: red;
+    box-shadow: 0px 0px 14px 2px $red;
+}
+
+@media $mobile {
+    utp-dashboard-tendered-load div.dashboard-tendered-load-container {
+        width: 96%;
+    }
+}

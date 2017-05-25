@@ -1,0 +1,66 @@
+<div class='bid-manager-container'>
+
+    <h4 ng-if="info.loadNumber" ng-init="bidMgrCtrl.clearSelected()">{{ info.loadNumber + " " + info.stops[0].city + ", " + info.stops[0].state + " - " + info.stops[(info.stops.length - 1)].city + ", " + info.stops[(info.stops.length - 1)].state }}</h4>
+    <h4 ng-if="!info.loadNumber">Bid Manager <span>None Selected</span></h4>
+    <span style="display:none" ng-if="info.loadNumber != selectedBid.loadNumber" ng-init="bidMgrCtrl.clearSelected()"></span>
+
+    <div class='bid-list-container'>
+        <ul>
+            <li ng-repeat="bid in info.allBids" ng-class="bidMgrCtrl.bidClass(bid)" ng-click="bidMgrCtrl.select(bid)" ng-if="bidMgrCtrl.isIncoming(bid)">
+                <p><b>Bid Number:</b> {{ bid.bidNumber }}</p>
+                <p>${{ bid.amount }}</p>
+            </li>
+            <li ng-if="!info.allBids && !!info">
+                <p>No bids</p>
+                <p>submitted</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class='load-details-container'>
+        <ul>
+            <h4 ng-if="selectedBid" class="bid-title">{{ 'Bid # ' + selectedBid.bidNumber }}</h4>
+            <li ng-repeat="stop in info.stops">
+                <h5>{{ stop.whsName }}</h5>
+                <p>{{ stop.city + ', ' + stop.state + ' ' + stop.zip }}</p>
+                <p ng-if="(stop.earlyTime != stop.lateTime) || (stop.earlyDate != stop.lateDate)">From: {{ stop.earlyTime.slice(0,-3) + " on " + stop.earlyDate.slice(5) }}</p>
+                <p ng-if="(stop.earlyTime != stop.lateTime) || (stop.earlyDate != stop.lateDate)">Until: {{ stop.lateTime.slice(0,-3) + " on " + stop.lateDate.slice(5) }}</p>
+                <p ng-if="(stop.earlyTime == stop.lateTime) && (stop.earlyDate == stop.lateDate)">Appt: {{ stop.earlyTime.slice(0,-3) + " on " + stop.earlyDate.slice(5) }}</p>
+                <div ng-if="bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid)" class="timedate-changes">
+                    <p ng-if='bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newTime'>{{ "Proposed time : " + bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newTime.slice(0, -3) }}</p>
+                    <input ng-if="selectedBid.counter && bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newTime" type="time" class="timedate-adjustment" ng-init="bidMgrCtrl.createBidAdj(stop.stopID)" ng-model="selectedBid.bidAdjustments[stop.stopID].time">
+                    <p ng-if='bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newDate'>{{ "Proposed date : " + bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newDate.slice(5).replace('-','/') }}</p>
+                    <input ng-if="selectedBid.counter && bidMgrCtrl.stopAdjusted(stop.stopID, selectedBid).newDate" type="date" class="timedate-adjustment" ng-init="bidMgrCtrl.createBidAdj(stop.stopID)" ng-model="selectedBid.bidAdjustments[stop.stopID].date">
+                </div>
+            </li>
+            <p ng-if="info && (!selectedBid.counter || !selectedBid.weight)" ng-class="bidMgrCtrl.loadWeightClass(selectedBid.weight, info.weight)">{{ (selectedBid.weight || info.weight) + " lbs" }}</p>
+            <span ng-if="selectedBid.weight && selectedBid.counter"><input ng-model="selectedBid.weight" class="counter-weight"> lbs</span>
+            <p ng-if="info && (!selectedBid.counter || !selectedBid.handling)" ng-class="bidMgrCtrl.loadWeightClass(selectedBid.handling, info.handling)">{{ bidMgrCtrl.handling(selectedBid.handling || info.handling) }}</p>
+            <select ng-if="selectedBid.handling && selectedBid.counter" ng-model="selectedBid.handling">
+                <option value='1' ng-selected="selectedBid.handling == 1">Pallets</option>
+    			<option value='2' ng-selected="selectedBid.handling == 2">Gaylords</option>
+    			<option value='3' ng-selected="selectedBid.handling == 3">Boxes (50 or less)</option>
+    			<option value='4' ng-selected="selectedBid.handling == 4">Boxes (50 or more)</option>
+    			<option value='5' ng-selected="selectedBid.handling == 5">Floor-Loaded/Loose</option>
+            </select>
+            <p ng-if="selectedBid" class="bid-amount">${{ selectedBid.amount }}</p>
+            <div ng-if='info' class="buttons-container">
+                <button ng-if="selectedBid && !selectedBid.counter" class="counter" ng-click="bidMgrCtrl.prepareCounter()">Counter</button>
+                <button ng-if="selectedBid && !selectedBid.counter" class="approve" ng-click="bidMgrCtrl.approveBid()">Approve</button>
+
+                <input ng-if="selectedBid && selectedBid.counter" ng-model="selectedBid.counterAmount" type="text">
+                <button ng-if="selectedBid && selectedBid.counter" class="submit" ng-click="bidMgrCtrl.submitCounter()">Submit</button>
+                <button ng-if="!selectedBid" ng-click='bidMgrCtrl.deleteLoad(info.loadNumber)' class='delete'>Delete Load</button>
+            </div>
+        </ul>
+
+    </div>
+
+    <div ng-if="info.deleted" class='deleted confirmation'>
+        <h5>Load number {{ info.loadNumber }} has been deleted</h5>
+    </div>
+    <div ng-if="info.approved" class='approved confirmation'>
+        <h5>Bid number {{ selectedBid.bidNumber }} has been approved, load number {{ info.loadNumber }} has been assigned</h5>
+    </div>
+
+</div>

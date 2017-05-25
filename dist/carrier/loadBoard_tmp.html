@@ -1,0 +1,105 @@
+<div class='utp-load-board' ng-controller='loadBoardController' ng-init="fetchData()">
+
+	<h3>Load Board</h3>
+
+	<div class='filter-container state-filters'>
+		<label>State</label>
+		<input class='state-input' type='text' ng-model='orgState.value' placeholder="Org">
+		<input class='state-input' type='text' ng-model='destState.value' placeholder="Dest">
+	</div>
+
+	<div class='filter-container zip-filters'>
+		<label>ZIP Code</label>
+		<input class='zip-input' type='text' ng-model='orgZip.value' placeholder="Org">
+		<input class='range-input' type='text' ng-model='orgZip.range' placeholder="Range">
+		<input class='zip-input' type='text' ng-model='destZip.value' placeholder="Dest">
+		<input class='range-input' type='text' ng-model='destZip.range' placeholder="Range">
+	</div>
+
+	<div class='filter-container distance-filters'>
+		<label>Miles</label>
+		<input class='distance-input' type='text' ng-model='minDistance.value' placeholder='Min'>
+		<input class='distance-input' type='text' ng-model='maxDistance.value' placeholder='Max'>
+	</div>
+
+	<div class='filter-container date-filters'>
+		<label>Ship Date</label>
+		<input class='date-input' type='date' ng-model='dateRange.fromDate'>
+		<input class='date-input' type='date' ng-model='dateRange.untilDate'>
+	</div>
+
+	<div class='filter-container driver-filter'>
+		<label>Driver</label>
+		<select ng-model='selectedDriver'>
+			<option value="{{ orgZip }}">All</option>
+			<option ng-repeat='driver in drivers' value='{{ driver }}'>{{ driver.driverID + ' : ' + driver.firstName + ' ' + driver.lastName }}</option>
+		</select>
+	</div>
+
+	<div class="bidboard-container">
+		<table>
+			<tr>
+				<th colspan='1'></th>
+				<th colspan='7'>Pick</th>
+				<th colspan='7'>Destination</th>
+			</tr>
+
+			<th>Load #</th>
+			<th>City</th>
+			<th>State</th>
+			<th>ZIP</th>
+			<th>Ready</th>
+			<th> </th>
+			<th>Pick By</th>
+			<th> </th>
+			<th>City</th>
+			<th>State</th>
+			<th>ZIP</th>
+			<th>Ready</th>
+			<th> </th>
+			<th>Deliver By</th>
+			<th> </th>
+			<th>Commodity</th>
+			<th>Weight</th>
+
+			<tr ng-repeat='x in loads | stateFilter:orgState | stateFilter:destState | zipFilter:orgZip | zipFilter:destZip | distanceFilter:minDistance | distanceFilter:maxDistance | datesFilter:dateRange | driverFilter:selectedDriver'>
+
+				<td>
+					{{ x.loadNumber }}
+					<img src='../images/hazmat.png' ng-if='x.hazmat == 1'>
+					<span ng-if='x.stops.length > 2' class='stops'>
+						<ol class='reveal-stops'>
+							<li ng-repeat="stop in x.stops">{{ stop.city + ', ' + stop.state + ' ' + stop.zip }}</li>
+						</ol>
+						{{ (x.stops.length) }}
+					</span>
+				</td>
+
+				<td>{{ x.stops[0].city }}</td>
+				<td>{{ x.stops[0].state }}</td>
+				<td>{{ x.stops[0].zip }}</td>
+				<td>{{ x.stops[0].earlyDate | date : 'shortDate' }}</td>
+				<td>{{ x.stops[0].earlyTime.slice(0,-3) }}</td>
+				<td>{{ x.stops[0].lateDate | date : 'shortDate' }}</td>
+				<td>{{ x.stops[0].lateTime.slice(0,-3) }}</td>
+
+				<td>{{ x.stops[(x.stops.length - 1)].city }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].state }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].zip }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].earlyDate | date : 'shortDate' }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].earlyTime.slice(0,-3) }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].lateDate | date : 'shortDate' }}</td>
+				<td>{{ x.stops[(x.stops.length - 1)].lateTime.slice(0,-3) }}</td>
+
+				<td>{{ x.commodity }}</td>
+				<td>{{ x.weight }}</td>
+
+				<td><button ng-click="placeBid(x.loadNumber)">Bid</button></td>
+
+			</tr>
+		</table>
+	</div>
+
+	<utp-bid-modal info='modalObject' ng-if='showModal' hide='hideModal' drivers='drivers'></utp-bid-modal>
+
+</div>

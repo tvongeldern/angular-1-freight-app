@@ -1,0 +1,150 @@
+utp-load-board div.utp-load-board div.filter-container {
+	float: left;
+	display: table-cell;
+}
+
+utp-load-board div.utp-load-board div.filter-container input {
+	padding: 4px 6px 4px 6px;
+	font-size: .85em;
+	float: left;
+}
+
+utp-load-board div.utp-load-board .state-filters {
+	width: 105px;
+}
+
+utp-load-board div.utp-load-board .state-filters input {
+	width: 30px;
+	margin: 0 2px 0 0;
+}
+
+utp-load-board div.utp-load-board .zip-filters {
+	width: 264px;
+}
+
+utp-load-board div.utp-load-board .zip-filters input.zip-input {
+	width: 50px;
+	margin: 0 2px 0 0;
+}
+
+utp-load-board div.utp-load-board .zip-filters input.range-input {
+	width: 40px;
+	margin: 0 8px 0 0;
+}
+
+utp-load-board div.utp-load-board .distance-filters {
+	width: 124px;
+}
+
+utp-load-board div.utp-load-board .distance-filters input {
+	width: 40px;
+	margin: 0 2px 0 0;
+}
+
+utp-load-board div.utp-load-board .date-filters {
+	width: 280px;
+}
+
+utp-load-board div.utp-load-board .date-filters input.date-input {
+	font-size: .75em;
+	padding: 3px 4px 3px 6px;
+	width: 120px;
+	margin: 0 2px 0 0;
+}
+
+utp-load-board div.utp-load-board .driver-filter {
+	width: 18.75%;
+	min-width: 180px;
+	max-width: 200px;
+}
+
+utp-load-board div.utp-load-board .driver-filter select {
+	width: 96%;
+	height: 25px;
+	font-size: .8em;
+	padding: 4px 7px 4px 7px;
+}
+
+utp-load-board div.utp-load-board div.bidboard-container {
+	max-height: 64vh;
+	overflow-y: scroll;
+	width: 100%;
+	display: block;
+}
+
+utp-load-board div.utp-load-board table {
+	width: 100%;
+	min-width: 920px;
+	border-collapse: collapse;
+}
+
+utp-load-board div.utp-load-board table th {
+	text-align: left;
+	cursor: pointer;
+}
+
+utp-load-board div.utp-load-board table td {
+	padding: 4px 2px 4px 2px;
+	font-size: .85em;
+	white-space: nowrap;
+    overflow-x: hidden;
+}
+
+utp-load-board div.utp-load-board table td img {
+	height: .94em;
+	width: auto;
+	margin: 0 0 -3px 4px;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+utp-load-board div.utp-load-board table td span.stops {
+	border-radius: 50%;
+	background-color: $red;
+	color: $white;
+	font-weight: bold;
+	font-size: .9em;
+	padding: 0 .33em 0 .33em;
+	border: 1px solid $red;
+	margin: 0 0 0 4px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+utp-load-board div.utp-load-board table td span.stops:active ol.reveal-stops{
+	display: block;
+}
+
+utp-load-board div.utp-load-board table td span.stops ol.reveal-stops {
+	margin: 0 0 0 10px;
+	position: absolute;
+	border: 1px solid $blue;
+	background-color: $white;
+	color: $black;
+	padding: 6px 6px 6px 18px;
+	display: none;
+}
+
+utp-load-board div.utp-load-board table td span.stops ol li {
+	margin-bottom: 2px;
+}
+
+utp-load-board div.utp-load-board table td button {
+	cursor: pointer;
+	border: 1px solid $blue;
+	border-radius: .2em;
+	background-color: $blue;
+	color: $white;
+}
+
+utp-load-board div.utp-load-board table tr:nth-child(n+3):hover {
+	color: $blue;
+	cursor: default;
+}
+
+utp-load-board div.utp-load-board table tr:nth-child(n+3):hover td img {
+	background-color: $green;
+	border-color: $green;
+}

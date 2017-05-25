@@ -1,0 +1,196 @@
+<span class="background"></span>
+
+<div class="content-box">
+
+	<span class="xout" ng-click="info.hideModal()">&#9747</span>
+
+	<h2>Create Warehouse</h2>
+
+	<div class='tabber' ng-if="info.opsMgmt == '2'">
+
+		<div class='tab' ng-click="page1.show = true; page2.show = false">
+			<h4>General</h4>
+		</div>
+
+		<div class='tab' ng-click="page1.show = false; page2.show = true">
+			<h4>Shipping/Receiving</h4>
+		</div>
+
+	</div>
+
+	<form ng-submit='submitFormData(info)'>
+
+		<div ng-if='page1.show == true' class='page1'>
+
+			<div class="input-container whsName-container">
+				<label>Warehouse Name</label>
+				<input type="text" ng-model='info.whsName'>
+			</div>
+
+			<div class="input-container address1-container">
+				<label>Address</label>
+				<input type="text" ng-model='info.address1'>
+			</div>
+
+			<div class='input-container address2-container'>
+				<label>Address 2</label>
+				<input type="text" ng-model='info.address2'>
+			</div>
+
+			<div class="input-container city-container">
+				<label>City</label>
+				<input type="text" ng-model='info.city'>
+			</div>
+
+			<div class="input-container state-container">
+				<label>State</label>
+				<input type="text" ng-model='info.state'>
+			</div>
+
+			<div class="input-container zip-container">
+				<label>ZIP Code</label>
+				<input type="text" ng-model='info.zip'>
+			</div>
+
+			<div class='input-container gen-phone'>
+				<label>Phone Number</label>
+				<input type="text" ng-model='info.phone' ng-change='phoneInput("phone")'>
+			</div>
+
+			<div class='input-container gen-email'>
+				<label>Email Address</label>
+				<input type="text" ng-model='info.email'>
+			</div>
+
+			<div class='input-container transpo-mgr'>
+				<label>Transportation Manager</label>
+				<input type="text" ng-model='info.transpoMgr'>
+			</div>
+
+			<div class='input-container operations-mgmt'>
+				<label>Operations Management</label>
+				<select ng-model='info.opsMgmt'>
+					<option value='1'>Same for shipping and receiving</option>
+					<option value='2'>Shipping and receiving separated</option>
+				</select>
+			</div>
+
+			<div class='input-container gen-open'>
+				<label><span ng-if='info.opsMgmt == "2"'>Office </span>Open</label>
+				<input type="time" ng-model='info.genOpen' max="23:59">
+			</div>
+
+			<div class='input-container gen-close'>
+				<label><span ng-if='info.opsMgmt == "2"'>Office </span>Close</label>
+				<input type="time" ng-model='info.genClose'>
+			</div>
+
+			<div class='input-container lumpers'>
+				<label>Lumpers</label>
+				<select ng-model='info.lumpers'>
+					<option value='1'>Warehouse is staffed to load and unload trucks</option>
+					<option value='2'>Lumpers required for receiving but not for shipping</option>
+					<option value='3'>Lumpers required for shipping and receiving</option>
+					<option value='4'>Lumpers required for shipping but not for receiving</option>
+				</select>
+			</div>
+
+			<div class='input-container apt-mgmt' ng-if="info.opsMgmt == '1'">
+				<label>Appointment Management</label>
+				<select ng-model='info.genApt'>
+					<option value='1'>Open/FCFS shipping and receiving</option>
+					<option value='2'>Shipping and receiving by appointment only</option>
+					<option value='3'>Call 2-4 hours ahead</option>
+				</select>
+			</div>
+
+		</div>
+
+		<div ng-if='page2.show == true' class='page2'>
+
+			<div class='input-container modal-subtitle'>
+				<h4>Shipping</h4>
+			</div>
+
+			<div class='input-container ship-phone'>
+				<label>Phone Number</label>
+				<input type="text" ng-model="info.shipPhone" ng-change="phoneInput('shipPhone')">
+			</div>
+
+			<div class='input-container ship-email'>
+				<label>Email</label>
+				<input type='text' ng-model="info.shipEmail">
+			</div>
+
+			<div class='input-container ship-mgr'>
+				<label>Shipping Manager</label>
+				<input type="text" ng-model='info.shipMgr'>
+			</div>
+
+			<div class='input-container ship-apt-mgmt'>
+				<label>Appointment Management</label>
+				<select ng-model='info.shipApt'>
+					<option value='1'>Open/FCFS shipping and receiving</option>
+					<option value='2'>Shipping and receiving by appointment only</option>
+					<option value='3'>Call 2-4 hours ahead</option>
+				</select>
+			</div>
+
+			<div class='input-container ship-open'>
+				<label>Open</label>
+				<input type='time' ng-model="info.shipOpen">
+			</div>
+
+			<div class='input-container ship-close'>
+				<label>Close</label>
+				<input type="time" ng-model="info.shipClose">
+			</div>
+
+			<div class='input-container modal-subtitle'>
+				<h4>Receiving</h4>
+			</div>
+
+			<div class='input-container rec-phone'>
+				<label>Phone Number</label>
+				<input type="text" ng-model="info.recPhone" ng-change="phoneInput('recPhone')">
+			</div>
+
+			<div class='input-container rec-email'>
+				<label>Email</label>
+				<input type='text' ng-model="info.recEmail">
+			</div>
+
+			<div class='input-container rec-mgr'>
+				<label>Receiving Manager</label>
+				<input type="text" ng-model='info.recMgr'>
+			</div>
+
+			<div class='input-container rec-apt-mgmt'>
+				<label>Appointment Management</label>
+				<select ng-model='info.recApt'>
+					<option value='1'>Open/FCFS shipping and receiving</option>
+					<option value='2'>Shipping and receiving by appointment only</option>
+					<option value='3'>Call 2-4 hours ahead</option>
+				</select>
+			</div>
+
+			<div class='input-container rec-open'>
+				<label>Open</label>
+				<input type='time' ng-model="info.recOpen">
+			</div>
+
+			<div class='input-container rec-close'>
+				<label>Close</label>
+				<input type="time" ng-model="info.recClose">
+			</div>
+
+		</div>
+
+		<div class="submit-button-container">
+			<utp-alert alert='buildWhsError'></utp-alert>
+			<button type='submit' class='create-whs-submit'>SUBMIT</button>
+		</div>
+
+	</form>
+
+</div>

@@ -1,0 +1,178 @@
+utp-add-stop div.utp-add-stop label {
+	font-size: .9em;
+}
+
+utp-add-stop div.utp-add-stop input[type='text'] {
+	font-size: .75em !important;
+}
+
+utp-add-stop div.utp-add-stop input[type='time'], input[type='date'] {
+	font-size: .7em !important;
+}
+
+utp-add-stop select {
+	height: 28px;
+	margin: 0;
+}
+
+utp-add-stop div.utp-add-stop {
+	width: 99.8%;
+	padding-top: 5px;
+	margin-bottom: 3px;
+	height: 126px;
+	border: 1px solid $blue;
+	border-radius: .15em;
+	background-color: $white;
+}
+
+utp-add-stop .input-container {
+	float: left;
+	display: table-cell;
+	height: 46px;
+	margin: 0 0 0 10px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container {
+	width: 100%;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container {
+	width: 100%;
+	min-height: 10px;
+	float: left;
+	position: relative;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results {
+	position: absolute;
+    width: 99%;
+    padding: 0;
+    margin: 0 0 0 4px;
+    list-style-type: none;
+    max-height: 126px;
+    border-radius: 0 0 .25rem .25rem;
+    overflow-y: scroll;
+    border-right: 1px solid $red;
+    border-left: 1px solid $red;
+    background-color: $white;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li {
+	width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    padding: .2rem 0 .2rem 1.2rem;
+    background-color: $white;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results div.list-body-container {
+	background-color: $white;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 0 2em 0 2em; */
+    max-height: 80px;
+    overflow-y: scroll;
+    border-top: 1px solid $red;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li:hover {
+	color: $white;
+	background-color: $blue;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li.create-whs-prompt {
+	width: 100%;
+    text-align: center;
+    padding: 6px 2em 6px 2em;
+    background-color: $red;
+    color: $white;
+    border-bottom: 1px solid $red;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span {
+	margin-right: 1em;
+	text-overflow: ellipsis;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span.results-name, span.results-address {
+	max-width: 35%;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span.results-geo {
+	max-width: 30%;
+}
+
+utp-add-stop div.utp-add-stop div.form-container div.input-container input,select {
+	width: 100%;
+	height: 28px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*SPECIFIC INPUT BOXES*/
+
+utp-add-stop div.utp-add-stop div.form-container .delete-stop {
+	width: 32px;
+	color: $red;
+	font-size: 2em;
+	text-align: center;
+	cursor: pointer;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .delete-stop:active {
+	color: $yellow;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-number {
+	width: 100px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-name {
+	width: 200px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-address {
+	width: 192px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-address2 {
+	width: 80px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-city {
+	width: 120px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-state {
+	width: 40px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-zip {
+	width: 72px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .pick-or-del {
+	width: 88px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-ready-date {
+	width: 140px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-ready-time {
+	width: 106px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-deadline-date {
+	width: 140px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-deadline-time {
+	width: 106px;
+}

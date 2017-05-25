@@ -1,0 +1,183 @@
+utp-customer-bid-manager div.bid-manager-container {
+    width: 98%;
+    max-width: 460px;
+    height: 100%;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    overflow: hidden;
+}
+
+utp-customer-bid-manager div.bid-manager-container h4 {
+    margin: 8px;
+    text-align: center;
+}
+
+utp-customer-bid-manager div.bid-manager-container h4 span {
+    color: $red;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container {
+    display: table-cell;
+    float: left;
+    height: 94%;
+    max-height: 450px;
+    width: 40%;
+    margin: 0 0 0 6px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 99%;
+    overflow-y: scroll;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li {
+    margin: 0;
+    padding: 0;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    margin: 1px 0 1px 0;
+    cursor: pointer;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li:hover {
+    border: 2px solid $blue;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li.adjusted {
+    border-color: $black;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li.countered {
+    background-color: $blue;
+    color: $white;
+    border-color: $red;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li p {
+    margin: 2px 0 2px 4px;
+    font-size: .8em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container {
+    display: table-cell;
+    width: 56%;
+    height: 94%;
+    max-height: 450px;
+    float: right;
+    margin: 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li {
+    margin: 0 0 10px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul h4.bid-title {
+    text-align: left;
+    margin: 0 0 8px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li h5 {
+    margin: 0px 0px 4px 0px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li p {
+    margin: 2px 0px;
+    font-size: .84em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li div.timedate-changes {
+    color: $red;
+    margin: 4px 0 0 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li div.timedate-changes input.timedate-adjustment {
+    height: 20px;
+    padding: 5px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul input.counter-weight {
+    width: 54px;
+    margin: 4px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul select {
+    width: 136px;
+    margin: 8px 0 16px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul .load-weight {
+    margin: 4px 0;
+    font-size: .9em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul .counter-figure {
+    color: $red;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul p.bid-amount {
+    font-weight: bold;
+    font-size: .9em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button {
+    padding: 8px;
+    width: 72px;
+    border: none;
+    border-radius: .15em;
+    color: $white;
+    cursor: pointer;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.approve {
+    background-color: $green;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.counter {
+    background-color: $yellow;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.submit {
+    background-color: $blue;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.delete {
+    background-color: $red;
+    white-space: nowrap;
+    width: 60%;
+    margin-top: 1.2rem;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container input {
+    width: 56px;
+    padding: 4px 7px;
+    display: table-cell;
+    float: left;
+    margin: -1px 8px 0 0;
+    font-size: 1.1em;
+}
+
+utp-customer-bid-manager div.bid-manager-container .deleted {
+    color: $white;
+    background-color: $red;
+    position: relative;
+    top: -35px;
+    height: 100%;
+}
+
+utp-customer-bid-manager div.bid-manager-container .approved {
+    color: $white;
+    background-color: $green;
+    position: relative;
+    top: -35px;
+    height: 100%;
+}
+
+utp-customer-bid-manager div.bid-manager-container .confirmation h5 {
+    position: absolute;
+    margin: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+}

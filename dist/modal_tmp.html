@@ -1,0 +1,15 @@
+<span ng-if='showModal'>
+
+    <div class='modal-background-shade'></div>
+
+    <div class="modal-foreground-container" ng-style="{'width': modal.width, 'height': modal.height}">
+        <div class='close-x' ng-click="modal.close()">x</div>
+        <div class="modal-content-container" ng-transclude>
+
+
+
+        </div>
+
+    </div>
+
+</span>

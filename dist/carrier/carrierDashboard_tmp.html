@@ -1,0 +1,58 @@
+
+<div class='utp-carrier-dashboard'>
+
+	<div ng-class="{'active-tab': (tabVar == 'bids'), 'tab-container': (tabVar != 'bids')}">
+		<h4 ng-click="crCtrl.showTab('bids')">Bids</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 'drivers'), 'tab-container': (tabVar != 'drivers')}">
+		<h4 ng-click="crCtrl.showTab('drivers')">Drivers</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 'loads'), 'tab-container': (tabVar != 'loads')}">
+		<h4 ng-click="crCtrl.showTab('loads')">Current Loads</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 'delivered'), 'tab-container': (tabVar != 'delivered')}">
+		<h4 ng-click="crCtrl.showTab('delivered')">Delivered Loads</h4>
+	</div>
+
+	<div class='dashboard-stage' ng-init='crCtrl.showTab("bids")'>
+
+		<div ng-if="tabVar == 'bids'">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat='bid in bids | filter:searchVar'>
+					<utp-carrier-dash-bid info='bid' drivers='{{ drivers }}' refresh='refreshTab'></utp-carrier-dash-bid>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="tabVar == 'drivers'">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat="driver in drivers">
+					<utp-carrier-dash-driver info="driver"></utp-carrier-dash-driver>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="tabVar == 'loads'">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat="load in loads">
+					<utp-carrier-dash-load info="load"></utp-carrier-dash-load>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="tabVar == 'delivered'">
+			<ul class='dashboard-loads-board'>
+
+			</ul>
+		</div>
+
+	</div>
+
+	<div class='dashboard-search-bar'>
+		<input class='search-input' type='text' ng-model='searchVar'>
+	</div>
+
+</div>

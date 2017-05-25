@@ -1,0 +1,8 @@
+utp-alert h4 {
+    width: 100%;
+    display: inline-block;
+    color: $red;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 12px 0 12px 0;
+}

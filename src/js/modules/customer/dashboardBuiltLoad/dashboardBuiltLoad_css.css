@@ -1,0 +1,38 @@
+utp-dashboard-built-load div.dashboard-load-container {
+    display: inline-block;
+    width: 96%;
+    height: 50px;
+    text-overflow: ellipsis;
+    border: 1px solid $blue;
+    margin: 2px;
+    cursor: pointer;
+    background-color: $white;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-built-load div.dashboard-load-container:hover {
+    border: 2px solid $blue;
+    margin: 1px 0 1px 1px;
+}
+
+utp-dashboard-built-load div.dashboard-load-container h5 {
+    margin: 5px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+utp-dashboard-built-load div.dashboard-load-container span.total-bids {
+    background-color: $blue;
+    color: $white;
+    font-size: .75em;
+    text-align: center;
+    padding: 4px 5px 4px 5px;
+    margin: 0 0 0 6px;
+    border-radius: .75em;
+}
+
+utp-dashboard-built-load div.dashboard-load-container b.lowest-bid {
+    font-size: .75em;
+    margin-left: 6px;
+}

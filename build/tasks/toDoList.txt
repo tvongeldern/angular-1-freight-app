@@ -1,0 +1,20 @@
+clear localStorage['carrierHiddenCounters'] of excess hidden counteroffers in carrier bid board page
+
+promise callbacks (? - 5/14/2016)
+
+consolidate freight filters from assorted controllers into common/freightFilters service
+    -service built, now just check for duplicate uses
+
+correct driver filtering on carrier bid board
+    -create purpose-specific endpoint?
+
+Socketize
+
+Loading states
+
+Add stop error - rectify this behavior
+    -To replicate:
+    ---add 2 stops
+    ---delete first
+    ---add another
+    ---problem?

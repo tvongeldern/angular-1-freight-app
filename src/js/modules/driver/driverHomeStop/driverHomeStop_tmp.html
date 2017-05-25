@@ -1,0 +1,23 @@
+<div class='driver-home-stop-container' ng-controller='driverHomeStopController'>
+
+    <div ng-if='!info.open' class='collapsed-stop'>
+        {{ info.city + ', ' + info.state }}
+        <b class="collapse-expand-button" ng-click="collapsed.toggle()">{{ collapsed.button() }}</b>
+    </div>
+
+    <div ng-if='info.open' class='open-stop'>
+        <b class="collapse-expand-button" ng-click="collapsed.toggle()">{{ collapsed.button() }}</b>
+
+        <h4>{{ info.whsName }}</h4>
+        <p>{{ info.address }}</p>
+        <p ng-if="info.address2">{{ info.address2 }}</p>
+        <p>{{ info.city + ', ' + info.state + ' ' + info.zip }}</p>
+        <p ng-if="info.opsMgmt == 1" class="phone-line">{{ 'Phone : ' + phoneFormat(info.genPhone) }}</p>
+        <p ng-if="info.opsMgmt == 2 && info.action == 0" class="phone-line">{{ 'Phone : ' + phoneFormat(info.shipPhone) }}</p>
+        <p ng-if="info.opsMgmt == 2 && info.action == 1" class="phone-line">{{ 'Phone : ' + phoneFormat(info.recPhone) }}</p>
+
+        <button ng-click="progress()">{{ buttonText }}</button>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div ng-controller="buildLoadController" class='utp-build-load'>
+
+	<h2>Build Load</h2>
+	<h3>Add stops</h3>
+
+	<div class='stops-container'>
+
+		<ul class='stops-list'>
+			<li>
+				<utp-add-stop info="stops[0]" number='1'></utp-add-stop>
+			</li>
+			<li ng-if="stops.length > 1">
+				<utp-add-stop info="stops[1]" number='2'></utp-add-stop>
+			</li>
+			<li ng-if="stops.length > 2">
+				<utp-add-stop info="stops[2]" number='3'></utp-add-stop>
+			</li>
+			<li ng-if="stops.length > 3">
+				<utp-add-stop info="stops[3]" number='4'></utp-add-stop>
+			</li>
+			<li ng-if="stops.length > 4">
+				<utp-add-stop info="stops[4]" number='5'></utp-add-stop>
+			</li>
+		</ul>
+
+		<div class='add-stop-container'>
+			<button ng-click="addStop()">Add Stop</button>
+		</div>
+
+	</div>
+	<utp-create-whs-modal info="stops[createWhsModalVar]" ng-if="modalVisible"></utp-create-whs-modal>
+
+	<div class='freight-container'>
+		<utp-freight-details info='freight'></utp-freight-details>
+	</div>
+
+	<utp-alert alert="buildLoadError"></utp-alert>
+
+	<div class='submit-container'>
+		<button ng-click='submitLoad()'>Submit Load</button>
+	</div>
+
+	<utp-modal modal-width='50%' modal-height='10rem' show-modal='confModal.show'>
+		<h4 class='conf-modal-msg'>{{ confModal.content }}</h4>
+		<a href='/customer'>Dashboard</a>
+	</utp-modal>
+
+</div>

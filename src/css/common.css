@@ -1,0 +1,81 @@
+@font-face {
+	font-family: roboto;
+	src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+	font-family: roboto-bld;
+	src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+	font-family: roboto-blk;
+	src: url(../fonts/Roboto-Black.ttf);
+}
+
+body {
+	font-family: roboto;
+	margin: 0;
+	left: 1px;
+	top: 0;
+	color: $black;
+}
+
+h1, h2, h3, h4, h5, label, th {
+	font-family: roboto-bld;
+}
+
+label {
+	width: 100%;
+	display: inline-block;
+	color: $black;
+}
+
+.grid-container {
+	float: left;
+	display: table-cell;
+}
+
+input,select {
+	border: 1px solid $blue;
+	border-radius: .15em;
+	padding: 5px 7px 5px 7px;
+	font-family: roboto;
+	color: $black;
+}
+
+input[type='text'], input[type='password'] {
+	font-size: 1.05em;
+}
+
+input[type='time'],input[type='date'] {
+	font-size: 1em;
+}
+
+select {
+	background-color: $white;
+	padding: 5px 21px 5px 7px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	background: url(../images/blueChevron.png) 96% / 12px 12px no-repeat;
+	cursor: pointer;
+}
+
+input:focus, select:focus {
+	outline: none;
+}
+
+button:focus, input[type='checkbox'] {
+	outline: none;
+}
+
+input:disabled, button:disabled {
+	cursor: not-allowed;
+}
+
+div.page-container {
+	width: 98%;
+	max-width: 1170px;
+	margin: 0 auto;
+}

@@ -1,0 +1,1210 @@
+@font-face {
+	font-family: roboto;
+	src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+	font-family: roboto-bld;
+	src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+	font-family: roboto-blk;
+	src: url(../fonts/Roboto-Black.ttf);
+}
+
+body {
+	font-family: roboto;
+	margin: 0;
+	left: 1px;
+	top: 0;
+	color: #333;
+}
+
+h1, h2, h3, h4, h5, label, th {
+	font-family: roboto-bld;
+}
+
+label {
+	width: 100%;
+	display: inline-block;
+	color: #333;
+}
+
+.grid-container {
+	float: left;
+	display: table-cell;
+}
+
+input,select {
+	border: 1px solid #809fff;
+	border-radius: .15em;
+	padding: 5px 7px 5px 7px;
+	font-family: roboto;
+	color: #333;
+}
+
+input[type='text'], input[type='password'] {
+	font-size: 1.05em;
+}
+
+input[type='time'],input[type='date'] {
+	font-size: 1em;
+}
+
+select {
+	background-color: #fff;
+	padding: 5px 21px 5px 7px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	background: url(../images/blueChevron.png) 96% / 12px 12px no-repeat;
+	cursor: pointer;
+}
+
+input:focus, select:focus {
+	outline: none;
+}
+
+button:focus, input[type='checkbox'] {
+	outline: none;
+}
+
+input:disabled, button:disabled {
+	cursor: not-allowed;
+}
+
+div.page-container {
+	width: 98%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+utp-add-stop div.utp-add-stop label {
+	font-size: .9em;
+}
+
+utp-add-stop div.utp-add-stop input[type='text'] {
+	font-size: .75em !important;
+}
+
+utp-add-stop div.utp-add-stop input[type='time'], input[type='date'] {
+	font-size: .7em !important;
+}
+
+utp-add-stop select {
+	height: 28px;
+	margin: 0;
+}
+
+utp-add-stop div.utp-add-stop {
+	width: 99.8%;
+	padding-top: 5px;
+	margin-bottom: 3px;
+	height: 126px;
+	border: 1px solid #809fff;
+	border-radius: .15em;
+	background-color: #fff;
+}
+
+utp-add-stop .input-container {
+	float: left;
+	display: table-cell;
+	height: 46px;
+	margin: 0 0 0 10px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container {
+	width: 100%;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container {
+	width: 100%;
+	min-height: 10px;
+	float: left;
+	position: relative;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results {
+	position: absolute;
+    width: 99%;
+    padding: 0;
+    margin: 0 0 0 4px;
+    list-style-type: none;
+    max-height: 126px;
+    border-radius: 0 0 .25rem .25rem;
+    overflow-y: scroll;
+    border-right: 1px solid #ff3333;
+    border-left: 1px solid #ff3333;
+    background-color: #fff;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li {
+	width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    padding: .2rem 0 .2rem 1.2rem;
+    background-color: #fff;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results div.list-body-container {
+	background-color: #fff;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 0 2em 0 2em; */
+    max-height: 80px;
+    overflow-y: scroll;
+    border-top: 1px solid #ff3333;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li:hover {
+	color: #fff;
+	background-color: #809fff;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li.create-whs-prompt {
+	width: 100%;
+    text-align: center;
+    padding: 6px 2em 6px 2em;
+    background-color: #ff3333;
+    color: #fff;
+    border-bottom: 1px solid #ff3333;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span {
+	margin-right: 1em;
+	text-overflow: ellipsis;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span.results-name, span.results-address {
+	max-width: 35%;
+}
+
+utp-add-stop div.utp-add-stop div.search-results-container ul.search-results li span.results-geo {
+	max-width: 30%;
+}
+
+utp-add-stop div.utp-add-stop div.form-container div.input-container input,select {
+	width: 100%;
+	height: 28px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*SPECIFIC INPUT BOXES*/
+
+utp-add-stop div.utp-add-stop div.form-container .delete-stop {
+	width: 32px;
+	color: #ff3333;
+	font-size: 2em;
+	text-align: center;
+	cursor: pointer;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .delete-stop:active {
+	color: #ffcc00;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-number {
+	width: 100px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-name {
+	width: 200px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-address {
+	width: 192px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-address2 {
+	width: 80px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-city {
+	width: 120px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-state {
+	width: 40px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .whs-zip {
+	width: 72px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .pick-or-del {
+	width: 88px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-ready-date {
+	width: 140px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-ready-time {
+	width: 106px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-deadline-date {
+	width: 140px;
+}
+
+utp-add-stop div.utp-add-stop div.form-container .load-deadline-time {
+	width: 106px;
+}
+utp-customer-bid-manager div.bid-manager-container {
+    width: 98%;
+    max-width: 460px;
+    height: 100%;
+    border: 1px solid #809fff;
+    border-radius: .15em;
+    overflow: hidden;
+}
+
+utp-customer-bid-manager div.bid-manager-container h4 {
+    margin: 8px;
+    text-align: center;
+}
+
+utp-customer-bid-manager div.bid-manager-container h4 span {
+    color: #ff3333;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container {
+    display: table-cell;
+    float: left;
+    height: 94%;
+    max-height: 450px;
+    width: 40%;
+    margin: 0 0 0 6px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 99%;
+    overflow-y: scroll;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #809fff;
+    border-radius: .15em;
+    margin: 1px 0 1px 0;
+    cursor: pointer;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li:hover {
+    border: 2px solid #809fff;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li.adjusted {
+    border-color: #333;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li.countered {
+    background-color: #809fff;
+    color: #fff;
+    border-color: #ff3333;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.bid-list-container ul li p {
+    margin: 2px 0 2px 4px;
+    font-size: .8em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container {
+    display: table-cell;
+    width: 56%;
+    height: 94%;
+    max-height: 450px;
+    float: right;
+    margin: 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li {
+    margin: 0 0 10px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul h4.bid-title {
+    text-align: left;
+    margin: 0 0 8px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li h5 {
+    margin: 0px 0px 4px 0px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li p {
+    margin: 2px 0px;
+    font-size: .84em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li div.timedate-changes {
+    color: #ff3333;
+    margin: 4px 0 0 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul li div.timedate-changes input.timedate-adjustment {
+    height: 20px;
+    padding: 5px;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul input.counter-weight {
+    width: 54px;
+    margin: 4px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul select {
+    width: 136px;
+    margin: 8px 0 16px 0;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul .load-weight {
+    margin: 4px 0;
+    font-size: .9em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul .counter-figure {
+    color: #ff3333;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul p.bid-amount {
+    font-weight: bold;
+    font-size: .9em;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button {
+    padding: 8px;
+    width: 72px;
+    border: none;
+    border-radius: .15em;
+    color: #fff;
+    cursor: pointer;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.approve {
+    background-color: #47d147;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.counter {
+    background-color: #ffcc00;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.submit {
+    background-color: #809fff;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container button.delete {
+    background-color: #ff3333;
+    white-space: nowrap;
+    width: 60%;
+    margin-top: 1.2rem;
+}
+
+utp-customer-bid-manager div.bid-manager-container div.load-details-container ul div.buttons-container input {
+    width: 56px;
+    padding: 4px 7px;
+    display: table-cell;
+    float: left;
+    margin: -1px 8px 0 0;
+    font-size: 1.1em;
+}
+
+utp-customer-bid-manager div.bid-manager-container .deleted {
+    color: #fff;
+    background-color: #ff3333;
+    position: relative;
+    top: -35px;
+    height: 100%;
+}
+
+utp-customer-bid-manager div.bid-manager-container .approved {
+    color: #fff;
+    background-color: #47d147;
+    position: relative;
+    top: -35px;
+    height: 100%;
+}
+
+utp-customer-bid-manager div.bid-manager-container .confirmation h5 {
+    position: absolute;
+    margin: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+utp-build-load div.utp-build-load {
+	padding: 0px 10px 0px 10px;
+}
+
+utp-build-load div.utp-build-load h2, h3 {
+	color: #333;
+}
+
+utp-build-load div.utp-build-load div.stops-container,div.freight-container,div.submit-container {
+	max-width: 946px;
+	min-width: 926px;
+}
+
+utp-build-load div.utp-build-load div.stops-container {
+	width: 100%;
+	height: 60%;
+	max-height: 484px;
+	margin-bottom: 4px;
+	border-radius: .15em;
+	background-color: #fff;
+	overflow-y: scroll;
+}
+
+utp-build-load div.utp-build-load div.stops-container ul.stops-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+utp-build-load div.utp-build-load div.stops-container div.add-stop-container {
+	width: 100%;
+	min-width: 920px;
+	float: left;
+}
+
+utp-build-load div.utp-build-load div.stops-container div.add-stop-container button {
+	cursor: pointer;
+	background-color: #809fff;
+	color: #fff;
+	border: 2px solid #809fff;
+	border-radius: .15em;
+	font-size: 1.1em;
+	width: 200px;
+	height: 30px;
+}
+
+utp-build-load div.utp-build-load div.freight-container {
+	width: 100%;
+	height: 140px;
+	min-height: 120px;
+	max-height: 200px;
+	border: 2px solid #809fff;
+	border-radius: .15em;
+	padding: 0;
+}
+
+utp-build-load div.utp-build-load div.submit-container {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+
+utp-build-load div.utp-build-load div.submit-container button {
+	width: 100.5%;
+	max-width: 950px;
+	height: 100%;
+	font-size: 1.5em;
+	background-color: #809fff;
+	color: #fff;
+	border: none;
+	border-radius: .14em;
+	cursor: pointer;
+}
+
+utp-build-load div.utp-build-load h4.conf-modal-msg {
+	width: 98%;
+    text-align: center;
+    background-color: #47d147;
+    padding: 2rem .4rem;
+    color: #fff;
+}
+
+utp-build-load div.utp-build-load utp-modal a {
+	color: #809fff;
+	float: right;
+}
+utp-create-whs-modal span.background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #383838;
+	opacity: 0.65;
+}
+
+utp-create-whs-modal div.content-box {
+	position: absolute;
+	width: 620px;
+	height: 560px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto auto auto;
+	padding: 1.6em;
+	background-color: #fff;
+	opacity: 1;
+	border:1px solid #809fff;
+	border-radius: .15em;
+	overflow: hidden;
+}
+
+utp-create-whs-modal div.content-box h2 {
+	font-size: 2.25em;
+	margin: 0 0 2.5% 0;
+	color: #809fff;
+}
+
+utp-create-whs-modal div.content-box span.xout {
+	position: absolute;
+	right: 0;
+	top: -2px;
+	height: 5%;
+	width: 5%;
+	color: #d6d6d6;
+	text-align:center;
+	font-weight: bold;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+utp-create-whs-modal div.content-box span.xout:hover {
+	color: #ff3333;
+}
+
+utp-create-whs-modal div.content-box div.tabber {
+	width: 100%;
+	height: 1.75em;
+	text-align: left;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab {
+	width: 40%;
+	height: 100%;
+	border-bottom: 3px solid #809fff;
+	color: #333;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 2.5% 0 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab:active {
+	border-color: #ff3333;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab h4 {
+	margin: 2px 0 0 0;
+}
+
+utp-create-whs-modal div.content-box form {
+	position; absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle {
+	margin: 2.5% 0 0 0;
+	height: 25px !important;
+	color: #809fff;
+	font-size: 1.15em;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container {
+	float: left;
+	display: table-cell;
+	height: 56px;
+	margin: 0 8px 0 0;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container input,select {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container select,input[type='time'] {
+	height: 32px;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle {
+	width: 90%;
+	padding: 0;
+	margin: 6px 0 6px 0;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle h4 {
+	margin: 0;
+}
+
+utp-create-whs-modal div.content-box form div.submit-button-container {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	margin-bottom: 0;
+}
+
+utp-create-whs-modal div.content-box form div.submit-button-container button.create-whs-submit {
+	height: 36px;
+	width: 100%;
+	cursor: pointer;
+	background-color: #809fff;
+	color: #fff;
+	border: none;
+	font-size: 1.5em;
+}
+
+utp-create-whs-modal div.content-box form button.create-whs-submit:disabled {
+	background-color: #ffcc00;
+	color: #fff;
+}
+
+
+
+/* SPECIFIC INPUT STYLING */
+
+
+
+utp-create-whs-modal div.content-box form div div.whsName-container {
+	width: 620px;
+	margin-top: 2.5%;
+}
+
+utp-create-whs-modal div.content-box form div div.address1-container {
+	width: 380px;
+}
+
+utp-create-whs-modal div.content-box form div div.address2-container {
+	width: 200px;
+}
+
+utp-create-whs-modal div.content-box form div div.city-container {
+	width: 320px;
+}
+
+utp-create-whs-modal div.content-box form div div.state-container {
+	width: 80px;
+}
+
+utp-create-whs-modal div.content-box form div div.zip-container {
+	width: 140px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-phone {
+	width: 180px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-email {
+	width: 380px;
+}
+
+utp-create-whs-modal div.content-box form div div.transpo-mgr {
+	width: 280px;
+}
+
+utp-create-whs-modal div.content-box form div div.operations-mgmt {
+	width: 280px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.gen-open {
+	width: 160px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-close {
+	width: 160px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.apt-mgmt {
+	width: 240px;
+}
+
+utp-create-whs-modal div.content-box form div div.lumpers {
+	width: 220px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.ship-phone {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-email {
+	width: 60%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-mgr {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-apt-mgmt {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-open {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-close {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-phone {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-email {
+	width: 60%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-mgr {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-apt-mgmt {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-open {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-close {
+	width: 30%;
+}
+utp-dashboard div.utp-dashboard {
+	left: 0;
+	width: 100%;
+	height: 98%;
+	min-height: 620px;
+	margin: 2% 0 0 5px;
+}
+
+utp-dashboard div.utp-dashboard div.tab-container,div.active-tab {
+	display: table-cell;
+	float: left;
+	width: 20%;
+	height: 25px;
+	margin: 0 0 6px 0;
+	text-align: center;
+}
+
+utp-dashboard div.utp-dashboard div h4.tab-title {
+	margin: 0;
+	padding: 2.5% 2.5% 2% 2.5%;
+	cursor: pointer;
+	border-bottom: 3px solid #fff;
+	z-index: 3;
+}
+
+utp-dashboard div.utp-dashboard div.tab-container h4:hover {
+	color: #809fff;
+}
+
+/*/SELECTED TAB STYLING/*/
+
+utp-dashboard div.utp-dashboard div.active-tab h4 {
+	border-bottom: 3px solid #809fff;
+}
+
+/*//*/
+
+utp-dashboard div.utp-dashboard div.loads-stage {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background-color: #fff;
+	width: 100%;
+	max-height: 500px;
+	float: left;
+	display: table-cell;
+}
+
+utp-dashboard div.utp-dashboard div.loads-stage div ul.dashboard-loads-board {
+	width: 100%;
+    max-height: 494px;
+    height: 94%;
+    margin: 6px 0 0 0;
+    padding: 0;
+    overflow-y: scroll;
+    background-color: #fff;
+    text-align: center;
+}
+
+utp-dashboard div.utp-dashboard div.dashboard-search-bar {
+	width: 98%;
+    display: inline-block;
+    border-radius: .15em;
+    height: 40px;
+	margin-top: 4px;
+}
+
+utp-dashboard div.utp-dashboard div.dashboard-search-bar input.search-input {
+	border-color: #809fff;
+	width: 100%;
+	margin: 0;
+	height: 26px;
+	background-image: url(../images/search.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: 38px 38px;
+}
+
+utp-dashboard div.utp-dashboard div.loads-stage div ul.dashboard-built-loads-board {
+	width: 49%;
+    max-height: 494px;
+    height: 94%;
+    margin: 6px 0 0 0;
+    padding: 0;
+    overflow-y: scroll;
+    background-color: #fff;
+    float: left;
+}
+
+utp-dashboard div.utp-dashboard div.loads-stage div div.dashboard-bid-manager {
+    width: 49%;
+    float: right;
+    height: 488px;
+    display: table-cell;
+    margin: 8px 0 4px 0;
+}
+
+@media screen and (max-width: 504px) {
+	utp-dashboard div.utp-dashboard div.tab-container,div.active-tab {
+		display: table-cell;
+	    float: left;
+	    width: 49%;
+	    height: 2rem;
+	    text-align: center;
+	}
+
+	utp-dashboard div.utp-dashboard div h4.tab-title {
+		margin: .25rem;
+		padding: 2.5%;
+		cursor: pointer;
+		border: 1px solid #809fff;
+		border-radius: .15em;
+	}
+
+	utp-dashboard div.utp-dashboard div.active-tab h4.tab-title {
+		color: #fff;
+		background-color: #809fff;
+	}
+
+	utp-dashboard div.utp-dashboard div.tab-container h4.tab-title {
+		color: #333;
+		background-color: #fff;
+	}
+
+	utp-dashboard div.utp-dashboard div.loads-stage div ul.dashboard-built-loads-board {
+		width: 100%;
+	}
+
+	utp-dashboard div.utp-dashboard div.dashboard-search-bar input.search-input {
+		width: 95%;
+	}
+
+	utp-dashboard div.utp-dashboard div.loads-stage div ul.dashboard-loads-board {
+		text-align: left;
+	}
+}
+utp-dashboard-built-load div.dashboard-load-container {
+    display: inline-block;
+    width: 96%;
+    height: 50px;
+    text-overflow: ellipsis;
+    border: 1px solid #809fff;
+    margin: 2px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-built-load div.dashboard-load-container:hover {
+    border: 2px solid #809fff;
+    margin: 1px 0 1px 1px;
+}
+
+utp-dashboard-built-load div.dashboard-load-container h5 {
+    margin: 5px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+utp-dashboard-built-load div.dashboard-load-container span.total-bids {
+    background-color: #809fff;
+    color: #fff;
+    font-size: .75em;
+    text-align: center;
+    padding: 4px 5px 4px 5px;
+    margin: 0 0 0 6px;
+    border-radius: .75em;
+}
+
+utp-dashboard-built-load div.dashboard-load-container b.lowest-bid {
+    font-size: .75em;
+    margin-left: 6px;
+}
+utp-dashboard-progress-load div.progress-load-container {
+    display: inline-block;
+    width: 99%;
+    height: 60px;
+    text-overflow: ellipsis;
+    border: 1px solid #809fff;
+    margin: 2px;
+    cursor: default;
+    background-color: #fff;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-progress-load div.progress-load-container h5 {
+    margin: 4px 0 4px 4px;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul {
+    margin: 2px 4px 8px 4px;
+    padding: 0;
+    list-style-type: none;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li {
+    display: inline;
+    float: left;
+}
+
+/*/utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container {
+    width: 120px;
+}/*/
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div {
+    font-size: .8em;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-hr {
+    margin: 0 6px 0 6px;
+    float: left;
+    color: gray;
+    overflow: hidden;
+    text-overflow: clip;
+    font-weight: lighter;
+    opacity: .6;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-hr img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-city {
+    float: right;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-city b {
+    font-size: .8em;
+    text-align: center;
+    margin-left: 4%;
+    white-space: nowrap;
+}
+utp-dashboard-tendered-load div.dashboard-tendered-load-container {
+    display: inline-block;
+    width: 99%;
+    height: 60px;
+    text-overflow: ellipsis;
+    border: 1px solid #809fff;
+    margin: 2px;
+    cursor: default;
+    background-color: #fff;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container {
+    width: 80%;
+    float: left;
+    display: table-cell;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container h5 {
+    margin: 4px 8px 4px 8px;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.text-container p {
+    margin: 0 8px 2px 8px;
+    font-size: .8em;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon {
+    text-align: center;
+    height: 100%;
+    width: 19.5%;
+    float: left;
+    display: table-cell;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon div {
+    height: 24px;
+    width: 24px;
+    margin: 6px auto 6px auto;
+    border-radius: 100%;
+    border: 3px outset black;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon h5 {
+    margin: 0;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .on-time {
+    background-color: #40ff00;
+    border-color: green;
+    box-shadow: 0px 0px 14px 2px #47d147;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .cutting-close {
+    background-color: #ffff00;
+    border-color: #ff9900;
+    box-shadow: 0px 0px 14px 2px #ffff00;
+}
+
+utp-dashboard-tendered-load div.dashboard-tendered-load-container div.status-icon .running-late {
+    background-color: #cc0000;
+    border-color: red;
+    box-shadow: 0px 0px 14px 2px #ff3333;
+}
+
+@media screen and (max-width: 504px) {
+    utp-dashboard-tendered-load div.dashboard-tendered-load-container {
+        width: 96%;
+    }
+}
+utp-freight-details div.utp-freight-details {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	padding: 0 2% 0 2%;
+}
+
+utp-freight-details div.utp-freight-details input[type='text'] {
+	font-size: .75em;
+}
+
+utp-freight-details div.utp-freight-details input[type='time'], input[type='date'] {
+	font-size: .7em;
+}
+
+utp-freight-details div.utp-freight-details select {
+	height: 26px;
+	margin: 0;
+}
+
+utp-freight-details div.utp-freight-details div.input-container {
+	float: left;
+	display: table-cell;
+}
+
+utp-freight-details div.utp-freight-details div.input-container input,select {
+	width: 90%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-desc {
+	width: 30%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-hazmat {
+	width: 10%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-handling, .commodity-un-number {
+	width: 15%;
+}
+utp-alert h4 {
+    width: 100%;
+    display: inline-block;
+    color: #ff3333;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 12px 0 12px 0;
+}
+utp-modal div.modal-background-shade {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background-color: #333;
+    z-index: 98;
+}
+
+utp-modal div.modal-foreground-container {
+    background-color: #fff;
+    z-index: 99;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.2rem;
+    max-width: 650px;
+}
+
+utp-modal div.modal-foreground-container div.close-x {
+    font-size: 1.4rem;
+    color: #ff3333;
+    cursor: pointer;
+    position: absolute;
+    right: .4rem;
+    top: -.1rem;
+}
+
+utp-modal div.modal-foreground-container div.modal-content-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+utp-navbar div.navbar-container {
+	left: 0;
+	top: 0;
+	margin: 0;
+	width: 100%;
+	height: 42px;
+	background-color: #809fff;
+	box-shadow: 2px 1px 1px 1px #ACAEB4;
+	-webkit-box-shadow: 2px 1px 1px 1px #ACAEB4;
+}
+
+utp-navbar div.navbar-container ul {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+utp-navbar div.navbar-container ul li {
+	display: inline;
+	float: right;
+	height: 26px;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+	padding: 8px 16px;
+}
+
+utp-navbar div.navbar-container ul li:hover {
+	background-color: #ff3333;
+}
+
+utp-navbar div.navbar-container ul li a {
+	text-decoration: none;
+	color: inherit;
+	padding: 8px 4px 8px 4px;
+	line-height: 26px;
+}

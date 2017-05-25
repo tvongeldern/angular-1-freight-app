@@ -1,0 +1,1 @@
+cat /usr/local/etc/nginx/nginx.conf > ~/Desktop/repos/untitledProject/nginx.conf.example

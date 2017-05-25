@@ -1,0 +1,185 @@
+utp-carrier-counteroffers div.counteroffers-container {
+    width: 100%;
+    height: 104px;
+    border-top: 2px solid $white;
+    overflow-x: scroll;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li {
+    display: inline;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container {
+    height: 100px;
+    width: 200px;
+    border: 2px solid $blue;
+    border-radius: .15em;
+    float: left;
+    margin: 0 2px 0 2px;
+    position: relative;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container span.xout {
+    float: right;
+    padding: 0 4px 0 4px;
+    cursor: pointer;
+    color: $red;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container h5 {
+    margin: 2px 2px 2px 2px;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container p {
+    margin: 8px 4px 4px 4px;
+    width: 100%;
+    display: inline-block;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container a {
+    cursor: pointer;
+    margin: 0 4px 8px 4px;
+    color: $blue;
+    text-decoration: underline;
+    font-size: .8em;
+    width: 90px;
+    float: left;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container input.counteroffer-rate-input {
+    width: 82px;
+    float: left;
+    position: absolute;
+    bottom: 2.7em;
+    right: 2px;
+    font-size: 12px;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container a:hover {
+    opacity: .8;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button {
+    outline: none;
+    border: none;
+    height: 100%;
+    color: $white;
+    font-size: 1em;
+    cursor: pointer;
+    opacity: .8;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button[disabled] {
+    color: $blue;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button:hover {
+    opacity: 1;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button.dual {
+    width: 50%;
+    float: left;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button.single {
+    width: 100%;
+    background-color: $blue;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.offer-buttons-container button:hover {
+    opacity: 1;
+}
+
+utp-carrier-counteroffers div.counteroffers-container .counter-button {
+    background-color: $yellow;
+}
+
+utp-carrier-counteroffers div.counteroffers-container .approve-button {
+    background-color: $green;
+}
+
+/*/details display/*/
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display {
+    height: 240px;
+    width: 200px;
+    position: fixed;
+    border: 1px solid $red;
+    border-radius: .15em;
+    background-color: $white;
+    margin-left: 25px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops {
+    margin: 0;
+    padding: 8px 0 0 12px;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops p {
+    font-size: .9em;
+    margin: 4px 0 4px 0;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops li h5 {
+    width: 100%;
+    display: inline-block;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops input {
+    width: 35%;
+    margin: 0 0 0 4px;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops li div.datetime-container {
+    width: 86px;
+    display: table-cell;
+    float: left;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops li div.datetime-container p {
+    font-size: .8em;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops div.buttons-container {
+    width: 200px;
+    height: 30px;
+    margin: 4px 0 0 -12px;
+    overflow: hidden;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops div.buttons-container button {
+    height: 100%;
+    width: 50%;
+    border: none;
+    outline: none;
+    opacity: .8;
+    float: left;
+    cursor: pointer;
+    color: $white;
+    font-size: 1em;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops div.buttons-container button:hover {
+    opacity: 1;
+}
+
+utp-carrier-counteroffers div.counteroffers-container ul.offers-inbox li div.offer-container div.details-display ul.details-stops div.buttons-container button[disabled] {
+    color: $white;
+}

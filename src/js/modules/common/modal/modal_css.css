@@ -1,0 +1,36 @@
+utp-modal div.modal-background-shade {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background-color: $black;
+    z-index: 98;
+}
+
+utp-modal div.modal-foreground-container {
+    background-color: $white;
+    z-index: 99;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.2rem;
+    max-width: 650px;
+}
+
+utp-modal div.modal-foreground-container div.close-x {
+    font-size: 1.4rem;
+    color: $red;
+    cursor: pointer;
+    position: absolute;
+    right: .4rem;
+    top: -.1rem;
+}
+
+utp-modal div.modal-foreground-container div.modal-content-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,18 @@
+<div ng-controller="dashboardProgressLoadController" class='progress-load-container' ng-init="initialize()">
+    <h5>{{ "Load Number " + info.loadNumber + " - " + loadStatus() }}</h5>
+    <ul>
+        <li ng-repeat='stop in info.stops'>
+            <div class='progress-stop-container'>
+                <div class='stop-hr' ng-if="(stop.stopID != info.stops[0].stopID) && ((stop.status == 0) || (stop.status == 4))">--------------------</div>
+                <div class='stop-hr' ng-if="(stop.stopID != info.stops[0].stopID) && stop.status == 1" style="margin-top:-2px">--------- <img src='/images/blueTruck.png' height="20px" width="20px"> --------</div>
+                <div class='stop-hr' ng-if="(stop.stopID != info.stops[0].stopID) && ((stop.status == 2) || (stop.status == 3))">----------------- <img src='/images/blueTruck.png' height="20px" width="20px"> </div>
+                <div class='stop-hr' ng-if="(stop.stopID == info.stops[0].stopID) && ((stop.status == 2) || (stop.status == 3))"><img src='/images/blueTruck.png' height="20px" width="20px"> </div>
+                <div class="stop-city">
+                    {{ stop.city + ", " + stop.state }}
+                    <br>
+                    <b ng-if='stop.status != 0'>{{ '(' + stopStatus(stop.status) + ')' }}</b>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

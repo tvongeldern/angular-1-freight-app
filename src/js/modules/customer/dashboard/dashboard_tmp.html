@@ -1,0 +1,64 @@
+
+<div class='utp-dashboard' ng-init="showTab(1)">
+
+	<div ng-class="{'active-tab': (tabVar == 1), 'tab-container': (tabVar != 1)}">
+		<h4 class="tab-title" ng-click="showTab(1)">Built</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 2), 'tab-container': (tabVar != 2)}">
+		<h4 class="tab-title" ng-click="showTab(2)">Tendered</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 3), 'tab-container': (tabVar != 3)}">
+		<h4 class="tab-title" ng-click="showTab(3)">In Progress</h4>
+	</div>
+
+	<div ng-class="{'active-tab': (tabVar == 4), 'tab-container': (tabVar != 4)}">
+		<h4 class="tab-title" ng-click="showTab(4)">Delivered</h4>
+	</div>
+
+	<div class='loads-stage'>
+
+		<div ng-if="tabVar == 1">
+			<ul class='dashboard-built-loads-board'>
+				<li ng-repeat='load in available'>
+					<utp-dashboard-built-load ng-class="bidManager.loadClass" info='load' toboard='bidManager.mount'></utp-dashboard-built-load>
+				</li>
+			</ul>
+			<div ng-if='!!available.length && !dshbrd.isMobile' class='dashboard-bid-manager'>
+				<utp-customer-bid-manager info='bidManager.load' refresh-data="showTab"></utp-customer-bid-manager>
+			</div>
+
+		</div>
+
+		<div ng-if="tabVar == 2">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat='load in tendered'>
+					<utp-dashboard-tendered-load info='load'></utp-dashboard-tendered-load>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="tabVar == 3">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat='load in transit'>
+					<utp-dashboard-progress-load info='load'></utp-dashboard-picked-load>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="tabVar == 4">
+			<ul class='dashboard-loads-board'>
+				<li ng-repeat='load in delivered'>
+					<utp-dashboard-delivered-load info='load'></utp-dashboard-delivered-load>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="dashboard-search-bar">
+		<input class="search-input" type="text" ng-model="searchVar">
+	</div>
+
+</div>

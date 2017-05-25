@@ -1,0 +1,14 @@
+<div class="driver-home-container" ng-controller="driverHomeController">
+    <h2 ng-if="!!load.stops">{{ (load.loadStatus < 2 ? 'Next ' : 'Current ') + 'load is ' + load.loadNumber + ' : ' + load.stops[0].city + ', ' + load.stops[0].state + ' - '  + load.stops[(load.stops.length - 1)].city + ', ' + load.stops[(load.stops.length - 1)].state }}</h2>
+
+    <ul>
+        <li ng-repeat="stop in load.stops">
+            <utp-driver-home-stop info='stop' load="{{ load.loadNumber }}" refresh="getDriverData"></utp-driver-home-stop>
+        </li>
+    </ul>
+
+    <h4 ng-if="!load.stops" class='no-loads-enjoy'>You currently have no loads assigned - enjoy your home time!</h4>
+
+    <button ng-class='buttonClass' ng-click='locationProvide()'>{{ buttonText }}</button>
+
+</div>

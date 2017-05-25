@@ -1,0 +1,76 @@
+<span class='background-shade'></span>
+
+<div class='visible-box' ng-style="{'overflow-y': alert.show ? 'scroll' : 'hidden'}">
+
+	<div class='x-out' ng-click='hide()'>&#9747</div>
+
+	<div class='content-box' ng-if='!!info.loadNumber' ng-init='bidModalCtrl.pullData(info)'>
+
+		<h3>{{ info.loadNumber + " : " + info.stops[0].city + ', ' + info.stops[0].state + " - " + info.stops[(info.stops.length - 1)].city + ', ' + info.stops[(info.stops.length - 1)].state}}</h3>
+
+		<div class='left-text-column'>
+			<h4>Stops : </h4>
+		</div>
+
+		<ul>
+
+			<li ng-repeat='stop in info.stops'>
+				<utp-bid-modal-stop info='stop'></utp-bid-modal-stop>
+			</li>
+
+		</ul>
+
+		<div class='freight-details'>
+
+			<div class='detail-container detail-commodity'>
+				<label>Commodity</label>
+				<p>{{ info.commodity }}</p>
+			</div>
+
+			<div class='detail-container detail-hazmat'>
+				<label>HAZMAT</label>
+				<p>{{ info.unNumber ?  "UN # " + info.unNumber : 'N/A' }}</p>
+			</div>
+
+			<div class='detail-container detail-weight'>
+				<label>Weight</label>
+				<p ng-if="!editable.weight"><span class="editable-item" ng-click="bidModalCtrl.toggleWeight(info.weight)">{{ info.weight }}</span></p>
+				<input ng-if="!!editable.weight" type="text" class='weight-adjust' ng-model='bid.weight' ng-if="editable.weight">
+				<button class='xout' ng-if="!!editable.weight" ng-click="bidModalCtrl.toggleWeight(info.weight)">X</button>
+			</div>
+
+			<div class='detail-container detail-handling'>
+				<label>Handling</label>
+				<p ng-if="!editable.handling"><span class="editable-item" ng-click="bidModalCtrl.toggleHandling(info.handling)">{{ bidModalCtrl.handlingFilter(info.handling) }}</span></p>
+				<select ng-model='bid.handling' ng-if="!!editable.handling" class='handling-adjust'>
+					<option value='1'>Pallets</option>
+					<option value='2'>Gaylords</option>
+					<option value='3'>Boxes (50 or less)</option>
+					<option value='4'>Boxes (50 or more)</option>
+					<option value='5'>Floor-Loaded/Loose</option>
+				</select>
+				<button class='xout' ng-if="!!editable.handling" ng-click="bidModalCtrl.toggleHandling(info.handling)">X</button>
+			</div>
+
+		</div>
+
+		<utp-alert ng-if="!bid.money" alert="submitError"></utp-alert>
+
+		<form class='bid-amount-container' ng-submit="bidModalCtrl.submitBid(info, hide)" ng-style="{'y-overflow': (submitError ? 'scroll' : 'hidden')}">
+			<div>
+				<label>Bid Amount</label>
+				<input type='text' ng-model="bid.money">
+			</div>
+			<div>
+				<label>Driver</label>
+				<select ng-model='bid.driver'>
+					<option value="null">Any</option>
+					<option ng-repeat='driver in drivers' value="{{ driver }}" ng-if="!bidModalCtrl.cannotTake(driver,info)">{{ driver.driverID + ' : ' + driver.firstName + ' ' + driver.lastName }}</option>
+				</select>
+			</div>
+			<button type="submit">Submit Bid</button>
+		</form>
+
+	</div>
+
+</div>

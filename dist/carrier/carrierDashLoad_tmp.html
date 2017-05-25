@@ -1,0 +1,13 @@
+<div ng-controller="carrierDashLoadController" class='carrier-dashboard-load-container'>
+    <h5 ng-init="initialize()">{{ loadHeader() }}</h5>
+    <p><b>Driver : </b>{{ (info.driverFirstName || '') + " " + (info.driverLastName || '') }}</p>
+    <ul>
+        <li ng-repeat="stop in info.stops">
+            <span ng-if="((stop.stopID != info.stops[0].stopID) && ((stop.status == 4) || (stop.status == 0)))" class='stop-hrule'> ---------------- </span>
+            <span ng-if="((stop.stopID == info.stops[0].stopID) && (stop.status > 1) && (stop.status < 4))" class='stop-hrule'><img src='/images/blueTruck.png' height='20px' width='20px'></span>
+            <span ng-if="((stop.stopID != info.stops[0].stopID) && (stop.status == 1))" class='stop-hrule'> -------<img src='/images/blueTruck.png' height='20px' width='20px'>------- </span>
+            <span ng-if="((stop.stopID != info.stops[0].stopID) && ((stop.status == 2) || (stop.status == 3)))" class='stop-hrule'> --------------<img src='/images/blueTruck.png' height='20px' width='20px'> </span>
+            <span>{{ stop.city + ", " + stop.state }}</span>
+        </li>
+    </ul>
+</div>

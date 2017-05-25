@@ -1,0 +1,11 @@
+<div class="carrier-dash-driver-container">
+
+    <h5>{{ info.firstName + " " + info.lastName + " - driver # " + info.driverID }}</h5>
+
+    <p ng-if="info.transitLoad"><b>Current Load : </b>{{ returnHeader(info.transitLoad) }}</p>
+
+    <p ng-if="!info.transitLoad && info.tenderedLoad"><b>Next Load : </b>{{ returnHeader(info.tenderedLoad) }}</p>
+
+    <p><b>Last Update : </b> {{ latestUpdate }}</p>
+
+</div>

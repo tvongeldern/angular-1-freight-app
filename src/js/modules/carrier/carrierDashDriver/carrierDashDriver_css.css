@@ -1,0 +1,18 @@
+utp-carrier-dash-driver div.carrier-dash-driver-container {
+    width: 98%;
+    height: 52px;
+    border: 1px solid $blue;
+    border-radius: .15em;
+    margin: 2px 0 2px 2px;
+    background-color: $white;
+    padding: 2px;
+}
+
+utp-carrier-dash-driver div.carrier-dash-driver-container h5 {
+    margin: 2px 0 2px 4px;
+}
+
+utp-carrier-dash-driver div.carrier-dash-driver-container p {
+    font-size: .74em;
+    margin: 0 0 2px 4px;
+}

@@ -1,0 +1,60 @@
+<div ng-controller='bidModalStopController' class='main-container'>
+
+	<h4>{{ (info.action == 0) ? 'Pick' : 'Delivery' }}</h4>
+
+	<div class='whs-info subcontainer'>
+
+		<p>{{ info.city + ', ' + info.state + ' ' + info.zip }}</p>
+
+		<p ng-if="info.opsMgmt == 1"><b>Warehouse Opens : </b>{{ info.genOpen.slice(0,-3) }}</p>
+
+		<p ng-if="info.opsMgmt == 1"><b>Warehouse Closes : </b>{{ info.genClose.slice(0,-3) }}</p>
+
+		<p ng-if="(info.opsMgmt == 2) && (info.action == 0)"><b>Shipping Opens : </b>{{ info.shipOpen.slice(0,-3) }}</p>
+
+		<p ng-if="(info.opsMgmt == 2) && (info.action == 0)"><b>Shipping Closes : </b>{{ info.shipClose.slice(0,-3) }}</p>
+
+		<p ng-if="(info.opsMgmt == 2) && (info.action == 1)"><b>Receiving Opens : </b>{{ info.recOpen.slice(0,-3) }}</p>
+
+		<p ng-if="(info.opsMgmt == 2) && (info.action == 1)"><b>Receiving Closes : </b>{{ info.recClose.slice(0,-3) }}</p>
+
+		<p ng-if="((info.opsMgmt == 1) && (info.genApt == 1))"><b>*</b>Open/FCFS</p>
+		<p ng-if="((info.opsMgmt == 1) && (info.genApt == 2))"><b>*</b>By Appointment</p>
+
+		<p ng-if="((info.opsMgmt == 2) && (info.action == 0) && (info.shipApt == 1))"><b>*</b>Shipping is Open/FCFS</p>
+		<p ng-if="((info.opsMgmt == 2) && (info.action == 0) && (info.shipApt == 2))"><b>*</b>Shipping is by Appointment</p>
+
+		<p ng-if="((info.opsMgmt == 2) && (info.action == 1) && (info.recApt == 1))"><b>*</b>Receiving is Open/FCFS</p>
+		<p ng-if="((info.opsMgmt == 2) && (info.action == 1) && (info.recApt == 2))"><b>*</b>Receiving is by Appointment</p>
+
+	</div>
+
+	<div class='load-times subcontainer'>
+
+		<p>
+			<b>Ready : </b><span class='editable-item' ng-click="toggleTime()">{{ info.earlyTime.slice(0,-3) }}</span><span class='editable-item' ng-click="toggleDate()">{{ info.earlyDate | date : 'shortDate' }}</span>
+		</p>
+
+		<p>
+			<b>Deadline : </b><span class='editable-item' ng-click="toggleTime()">{{ info.lateTime.slice(0,-3) }}</span><span class='editable-item' ng-click="toggleDate()">{{ info.lateDate | date : 'shortDate' }}</span>
+		</p>
+
+	</div>
+
+	<div class='bid-edit subcontainer'>
+
+		<div class='input-container' ng-if='newStopDate'>
+			<label>Proposed <span ng-if="info.action==0">Pickup</span><span ng-if="info.action==1">Delivery</span> Date</label>
+			<input type='date' ng-model="info.adjustments.date">
+			<button ng-click='toggleDate()' class='xout'>&#9747</button>
+		</div>
+
+		<div class='input-container' ng-if='newStopTime'>
+			<label>Proposed <span ng-if="info.action==0">Pickup</span><span ng-if="info.action==1">Delivery</span> Time</label>
+			<input type='time' ng-model="info.adjustments.time">
+			<button ng-click='toggleTime()' class='xout'>&#9747</button>
+		</div>
+
+	</div>
+
+</div>

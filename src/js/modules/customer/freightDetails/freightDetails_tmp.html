@@ -1,0 +1,44 @@
+<div ng-controller='freightDetailsController' class='utp-freight-details'>
+
+	<h3>Freight Details</h3>
+
+	<div class='input-container commodity-desc'>
+		<label>Commodity</label>
+		<input type='text' ng-model='info.commodity' ng-if="info.commodity != '0'" ng-change='textTest(info.commodity)'>
+		<select ng-model='info.commodity' ng-if="info.commodity == '0'" ng-change='selectTest(info.commodity)'>
+			<option value='0' ng-if="info.commodity == '0'">Select One</option>
+			<option value='General Goods'>General Goods</option>
+			<option value='Plastics'>Plastics</option>
+			<option value='Tires'>Tires</option>
+			<option value='Carbon Black'>Carbon Black</option>
+			<option value=''>Other</option>
+		</select>
+	</div>
+
+	<div class='input-container commodity-weight'>
+		<label>Weight</label>
+		<input type='text' ng-model='info.weight'>
+	</div>
+
+	<div class='input-container commodity-handling'>
+		<label>Handling</label>
+		<select ng-model='info.handling'>
+			<option value='1'>Pallets</option>
+			<option value='2'>Gaylords</option>
+			<option value='3'>Boxes (50 or less)</option>
+			<option value='4'>Boxes (50 or more)</option>
+			<option value='5'>Floor-Loaded/Loose</option>
+		</select>
+	</div>
+
+	<div class='input-container commodity-hazmat'>
+		<label>HAZMAT</label>
+		<input type='checkbox' ng-model='info.hazmat'>
+	</div>
+
+	<div class='input-container commodity-un-number'>
+		<label>UN Number</label>
+		<input type='text' ng-model='info.unNumber' ng-disabled='!info.hazmat'>
+	</div>
+
+</div>

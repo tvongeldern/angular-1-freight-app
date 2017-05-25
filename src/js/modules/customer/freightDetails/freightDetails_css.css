@@ -1,0 +1,40 @@
+utp-freight-details div.utp-freight-details {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	padding: 0 2% 0 2%;
+}
+
+utp-freight-details div.utp-freight-details input[type='text'] {
+	font-size: .75em;
+}
+
+utp-freight-details div.utp-freight-details input[type='time'], input[type='date'] {
+	font-size: .7em;
+}
+
+utp-freight-details div.utp-freight-details select {
+	height: 26px;
+	margin: 0;
+}
+
+utp-freight-details div.utp-freight-details div.input-container {
+	float: left;
+	display: table-cell;
+}
+
+utp-freight-details div.utp-freight-details div.input-container input,select {
+	width: 90%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-desc {
+	width: 30%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-hazmat {
+	width: 10%;
+}
+
+utp-freight-details div.utp-freight-details .commodity-handling, .commodity-un-number {
+	width: 15%;
+}

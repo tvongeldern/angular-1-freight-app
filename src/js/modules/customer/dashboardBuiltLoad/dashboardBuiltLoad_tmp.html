@@ -1,0 +1,7 @@
+<div class='dashboard-load-container' ng-init='sortBids()' ng-click="toboard(info)">
+    <h5>{{ info.loadNumber + ' : ' + stopIterator(info.stops) }}</h5>
+    <div>
+        <span class="total-bids">{{ (bidCount || "No") + " bid" + (bidCount != 1 ? "s" : "") }}</span>
+        <b ng-if="info.allBids[0]" class='lowest-bid'>Lowest: {{ sortByAmount(info.allBids)[0].amount }}</b>
+    </div>
+</div>

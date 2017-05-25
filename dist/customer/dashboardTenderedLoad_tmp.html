@@ -1,0 +1,11 @@
+<div class="dashboard-tendered-load-container" ng-controller="dashboardTenderedLoadController" ng-init="sortStops()">
+    <div class='text-container'>
+        <h5>{{ info.loadNumber + " : " + info.stops[0].city + ", " + info.stops[0].state + " - " + info.stops[(info.stops.length - 1)].city + ", " + info.stops[(info.stops.length - 1)].state }}</h5>
+        <p><b>Driver : </b>{{ info.firstName + " " + info.lastName }}</p>
+        <p><b>Last Update : </b>{{ driverLastUpdate() || "Not Available" }}</p>
+    </div>
+    <div class="status-icon" ng-if="info.lastUpdate">
+        <div ng-class="statusClass"></div>
+        <h5>{{ statusText }}</h5>
+    </div>
+</div>

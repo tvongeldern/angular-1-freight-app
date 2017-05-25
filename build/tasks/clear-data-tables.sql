@@ -1,0 +1,9 @@
+TRUNCATE TABLE availableLoads;
+TRUNCATE TABLE bids;
+TRUNCATE TABLE inactiveBids;
+TRUNCATE TABLE stopAdjustments;
+TRUNCATE TABLE stops;
+TRUNCATE TABLE transitLoads;
+TRUNCATE TABLE deliveredLoads;
+TRUNCATE TABLE deliveredLoadStops;
+TRUNCATE TABLE locationUpdates;

@@ -1,0 +1,51 @@
+<div class='counteroffers-container' ng-init='ccoCtrl.fetchOffers()' ng-show='offers.length > 0'>
+
+    <ul class="offers-inbox">
+        <li ng-repeat='offer in offers' ng-if="!ccoCtrl.hidden(offer.bidNumber)">
+
+            <div class='offer-container'>
+
+                <span class='xout' ng-click='ccoCtrl.closeOffer(offer.bidNumber)'>&#9747</span>
+                <h5>{{ offer.loadNumber + ' ' + offer.locations[0].city + ', ' + offer.locations[0].state + ' - ' + offer.locations[offer.locations.length - 1].city + ', ' + offer.locations[offer.locations.length - 1].state }}</h5>
+                <p>{{ '$' + offer.amount }}</p>
+                <a ng-if='(offer.stopsAsIs == 1) && !offer.weight && !offer.handling' ng-click='ccoCtrl.showDetails(offer, true)'>View Details</a>
+                <input ng-if='offer.showCounter && !offer.showDetails' type='text' class='counteroffer-rate-input' ng-model='offer.counterAmount'>
+                <div class='offer-buttons-container'>
+                    <button ng-if='(offer.stopsAsIs == 1) && !offer.weight && !offer.handling' class='dual counter-button' ng-click='ccoCtrl.toggleCounter(offer)'>counter</button>
+                    <button ng-if='(offer.stopsAsIs == 1) && !offer.weight && !offer.handling && !offer.showCounter' class='dual approve-button' ng-click="ccoCtrl.approveCounter(offer)">approve</button>
+                    <button ng-if='((offer.stopsAsIs == 1) && (offer.showCounter))' class='dual approve-button' ng-disabled="((!offer.counterAmount) || (offer.counterAmount <= offer.amount))" ng-click='ccoCtrl.submitCounter(offer)'>submit</button>
+                    <button ng-if='(offer.stopsAsIs != 1) || offer.weight || offer.handling' class='single' ng-click='ccoCtrl.showDetails(offer, true)'>View Details</button>
+                </div>
+
+                <div class="details-display" ng-if='offer.showDetails' ng-mouseleave="ccoCtrl.showDetails(offer, false)">
+                    <ul class='details-stops'>
+                        <li ng-repeat='stop in offer.locations'>
+                            <h5>{{ stop.city + ', ' + stop.state + ' ' + stop.zip }}</h5>
+                            <div class='datetime-container'>
+                                <p ng-if="((stop.earlyTime != stop.lateTime) || (stop.earlyDate != stop.lateDate))"><u>From</u></p>
+                                <p>{{ stop.earlyTime.slice(0,-3) }}</p>
+                                <p>{{ stop.earlyDate | date:'MM-dd-yyyy' }}</p>
+                            </div>
+                            <div class='datetime-container' ng-if="((stop.earlyTime != stop.lateTime) || (stop.earlyDate != stop.lateDate))">
+                                <p><u>Until</u></p>
+                                <p>{{ stop.lateTime.slice(0,-3) }}</p>
+                                <p>{{ stop.lateDate | date:'MM-dd-yyyy' }}</p>
+                            </div>
+                        </li>
+                        <p class='freight-details'><b>Weight : </b>{{ offer.weight || offer.originalWeight }}</p>
+                        <p class='freight-details'><b>Handling : </b>{{ ccoCtrl.handling(offer.handling || offer.originalHandling) }}</p>
+                        <p ng-if="offer.showCounter" ><b>Amount : </b><input ng-model="offer.counterAmount"></p>
+                        <div ng-if='(offer.stopsAsIs != 1) || offer.weight || offer.handling' class='buttons-container'>
+                            <button class='counter-button' ng-click="ccoCtrl.toggleCounter(offer)">counter</button>
+                            <button ng-if="!offer.showCounter" class='approve-button' ng-click="ccoCtrl.approveCounter(offer)">approve</button>
+                            <button ng-if='offer.showCounter' class='approve-button' ng-click="ccoCtrl.displayCounterSubmit(offer)" ng-disabled="((!offer.counterAmount) || (offer.counterAmount <= offer.amount))">submit</button>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,17 @@
+{
+  "name": "utpnode",
+  "version": "0.0.1",
+  "description": "utp node scripts",
+  "main": "./dist/server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "./build/buildmap.sh && node ./dist/server.js"
+  },
+  "author": "Tom von Geldern",
+  "license": "ISC"
+}

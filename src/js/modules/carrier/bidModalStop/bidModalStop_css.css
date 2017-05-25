@@ -1,0 +1,54 @@
+utp-bid-modal-stop div.main-container {
+	margin-bottom: 5px;
+	width: 100%;
+	height: 100px;
+}
+
+utp-bid-modal-stop div.main-container h4 {
+	margin: 0;
+	color: $black;
+	float: left;
+}
+
+utp-bid-modal-stop div.main-container div.subcontainer {
+	float: left;
+	display: table-cell;
+}
+
+utp-bid-modal-stop div.main-container div.subcontainer p {
+	margin: 4px 0 4px 0;
+}
+
+utp-bid-modal-stop div.main-container div.subcontainer span.editable-item {
+	margin: 0 4px 0 4px;
+}
+
+utp-bid-modal-stop div.main-container div.subcontainer div button.xout {
+	border: none;
+	border-radius: 100%;
+	color: $white;
+	font-weight: bold;
+	background-color: $red;
+	cursor: pointer;
+	padding: .1em .34em .1em .34em;
+	text-align: center;
+	font-family: roboto-blk;
+	margin-top: 1px;
+	/*/border-right: 1px solid $red;
+	border-left: 1px solid $red;/*/
+}
+
+utp-bid-modal-stop div.main-container div.whs-info {
+	width: 100%;
+}
+
+utp-bid-modal-stop div.main-container div.load-times {
+	width: 100%;
+	height: 80px;
+	margin: 10px 0 0 0;
+}
+
+utp-bid-modal-stop div.main-container div.bid-edit {
+	width:  100%;
+	margin: -1.15em 0 12px 0;
+}

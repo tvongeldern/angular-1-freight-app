@@ -1,0 +1,254 @@
+utp-create-whs-modal span.background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #383838;
+	opacity: 0.65;
+}
+
+utp-create-whs-modal div.content-box {
+	position: absolute;
+	width: 620px;
+	height: 560px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto auto auto;
+	padding: 1.6em;
+	background-color: $white;
+	opacity: 1;
+	border:1px solid $blue;
+	border-radius: .15em;
+	overflow: hidden;
+}
+
+utp-create-whs-modal div.content-box h2 {
+	font-size: 2.25em;
+	margin: 0 0 2.5% 0;
+	color: $blue;
+}
+
+utp-create-whs-modal div.content-box span.xout {
+	position: absolute;
+	right: 0;
+	top: -2px;
+	height: 5%;
+	width: 5%;
+	color: #d6d6d6;
+	text-align:center;
+	font-weight: bold;
+	font-size: 2em;
+	cursor: pointer;
+}
+
+utp-create-whs-modal div.content-box span.xout:hover {
+	color: $red;
+}
+
+utp-create-whs-modal div.content-box div.tabber {
+	width: 100%;
+	height: 1.75em;
+	text-align: left;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab {
+	width: 40%;
+	height: 100%;
+	border-bottom: 3px solid $blue;
+	color: $black;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 2.5% 0 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab:active {
+	border-color: $red;
+}
+
+utp-create-whs-modal div.content-box div.tabber div.tab h4 {
+	margin: 2px 0 0 0;
+}
+
+utp-create-whs-modal div.content-box form {
+	position; absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle {
+	margin: 2.5% 0 0 0;
+	height: 25px !important;
+	color: $blue;
+	font-size: 1.15em;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container {
+	float: left;
+	display: table-cell;
+	height: 56px;
+	margin: 0 8px 0 0;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container input,select {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+utp-create-whs-modal div.content-box form div div.input-container select,input[type='time'] {
+	height: 32px;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle {
+	width: 90%;
+	padding: 0;
+	margin: 6px 0 6px 0;
+}
+
+utp-create-whs-modal div.content-box form div div.modal-subtitle h4 {
+	margin: 0;
+}
+
+utp-create-whs-modal div.content-box form div.submit-button-container {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	margin-bottom: 0;
+}
+
+utp-create-whs-modal div.content-box form div.submit-button-container button.create-whs-submit {
+	height: 36px;
+	width: 100%;
+	cursor: pointer;
+	background-color: $blue;
+	color: $white;
+	border: none;
+	font-size: 1.5em;
+}
+
+utp-create-whs-modal div.content-box form button.create-whs-submit:disabled {
+	background-color: $yellow;
+	color: $white;
+}
+
+
+
+/* SPECIFIC INPUT STYLING */
+
+
+
+utp-create-whs-modal div.content-box form div div.whsName-container {
+	width: 620px;
+	margin-top: 2.5%;
+}
+
+utp-create-whs-modal div.content-box form div div.address1-container {
+	width: 380px;
+}
+
+utp-create-whs-modal div.content-box form div div.address2-container {
+	width: 200px;
+}
+
+utp-create-whs-modal div.content-box form div div.city-container {
+	width: 320px;
+}
+
+utp-create-whs-modal div.content-box form div div.state-container {
+	width: 80px;
+}
+
+utp-create-whs-modal div.content-box form div div.zip-container {
+	width: 140px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-phone {
+	width: 180px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-email {
+	width: 380px;
+}
+
+utp-create-whs-modal div.content-box form div div.transpo-mgr {
+	width: 280px;
+}
+
+utp-create-whs-modal div.content-box form div div.operations-mgmt {
+	width: 280px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.gen-open {
+	width: 160px;
+}
+
+utp-create-whs-modal div.content-box form div div.gen-close {
+	width: 160px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.apt-mgmt {
+	width: 240px;
+}
+
+utp-create-whs-modal div.content-box form div div.lumpers {
+	width: 220px;
+
+}
+
+utp-create-whs-modal div.content-box form div div.ship-phone {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-email {
+	width: 60%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-mgr {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-apt-mgmt {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-open {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.ship-close {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-phone {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-email {
+	width: 60%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-mgr {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-apt-mgmt {
+	width: 45%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-open {
+	width: 30%;
+}
+
+utp-create-whs-modal div.content-box form div div.rec-close {
+	width: 30%;
+}

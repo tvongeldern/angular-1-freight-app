@@ -1,0 +1,10 @@
+<div ng-controller='navbarController' class='navbar-container' ng-init='navbarFill(); securityCheck()'>
+
+	<ul>
+		<li ng-repeat='item in navbarObj'>
+			<a ng-if='item.destination' ng-href='{{item.destination}}'>{{ item.name }}</a>
+			<a ng-if='item.clickJs' ng-click='item.clickJs()'>{{ item.name }}</a>
+		</li>
+	</ul>
+
+</div>

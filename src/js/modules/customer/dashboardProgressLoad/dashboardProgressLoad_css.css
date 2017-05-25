@@ -1,0 +1,61 @@
+utp-dashboard-progress-load div.progress-load-container {
+    display: inline-block;
+    width: 99%;
+    height: 60px;
+    text-overflow: ellipsis;
+    border: 1px solid $blue;
+    margin: 2px;
+    cursor: default;
+    background-color: $white;
+    border-radius: .15em;
+    text-align: left;
+}
+
+utp-dashboard-progress-load div.progress-load-container h5 {
+    margin: 4px 0 4px 4px;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul {
+    margin: 2px 4px 8px 4px;
+    padding: 0;
+    list-style-type: none;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li {
+    display: inline;
+    float: left;
+}
+
+/*/utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container {
+    width: 120px;
+}/*/
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div {
+    font-size: .8em;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-hr {
+    margin: 0 6px 0 6px;
+    float: left;
+    color: gray;
+    overflow: hidden;
+    text-overflow: clip;
+    font-weight: lighter;
+    opacity: .6;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-hr img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-city {
+    float: right;
+}
+
+utp-dashboard-progress-load div.progress-load-container ul li div.progress-stop-container div.stop-city b {
+    font-size: .8em;
+    text-align: center;
+    margin-left: 4%;
+    white-space: nowrap;
+}
